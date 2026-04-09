@@ -1,0 +1,96 @@
+:root {
+    --bg: #050505;
+    --card-bg: #111;
+    --text: #ffffff;
+    --accent: #00f2ff; /* Cyan électrique */
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--accent);
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.player-section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.iframe-container {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--card-bg);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid #222;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    background: #1a1a1a;
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: 60px;
+    font-size: 0.8rem;
+    color: #444;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* Version Desktop */
+@media (min-width: 600px) {
+    .social-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

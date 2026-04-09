@@ -2,8 +2,7 @@
     --bg: #030303;
     --card-bg: #111;
     --text: #ffffff;
-    --accent: #00f2ff; /* Cyan électrique */
-    --hover-bg: #1a1a1a;
+    --accent: #00f2ff; /* Cyan kAzOth */
 }
 
 body {
@@ -16,32 +15,30 @@ body {
     align-items: center;
 }
 
-/* STYLE DE LA BANNIÈRE (HERO) */
+/* Configuration de la bannière avec ton image PNG */
 .hero {
     width: 100%;
-    height: 50vh; /* Prend 50% de la hauteur de l'écran */
+    height: 50vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* --- RÉGLAGE IMAGE DE FOND --- */
-    background-image: url('banniere.png'); /* REMPLACE LE NOM SI BESOIN */
-    background-size: cover; /* L'image s'adapte sans se déformer */
-    background-position: center; /* Centre l'image */
+    background-image: url('banniere.png'); /* Extension corrigée en .png */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 30px;
 }
 
-/* Voile noir sur la bannière pour rendre le texte lisible */
 .hero .overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* 60% d'opacité noire */
+    background-color: rgba(0, 0, 0, 0.5); /* Assombrit l'image pour lire le texte */
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* Place le texte au-dessus du voile */
+    z-index: 2;
     text-align: center;
 }
 
@@ -51,8 +48,7 @@ body {
     letter-spacing: -3px;
     margin: 0;
     text-transform: uppercase;
-    color: var(--text);
-    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5); /* Lueur de l'accent color */
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
 }
 
 .subtitle {
@@ -63,13 +59,9 @@ body {
     font-weight: bold;
 }
 
-/* LE RESTE DU SITE */
 main {
     width: 90%;
     max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-bottom: 60px;
 }
 
@@ -81,16 +73,13 @@ main {
 .iframe-container {
     border-radius: 8px;
     overflow: hidden;
-    background: var(--card-bg);
     border: 1px solid #222;
 }
 
-/* GRILLE DE RÉSEAUX AMÉLIORÉE */
 .social-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
-    width: 100%;
 }
 
 .card {
@@ -101,67 +90,36 @@ main {
     color: var(--text);
     font-weight: bold;
     display: flex;
-    align-items: center; /* Aligne icône et texte */
-    justify-content: start; /* Texte collé à l'icône */
-    gap: 15px; /* Espace entre icône et texte */
+    align-items: center;
+    gap: 15px;
     border-radius: 4px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
-/* Style commun pour les icônes */
-.card i {
-    font-size: 1.5rem; /* Taille des icônes */
-    color: var(--text); /* Par défaut blanc */
-}
+.card i { font-size: 1.5rem; }
 
-/* -- HOVER (SURVOL) PERSONNALISÉ PAR RÉSEAU -- */
-.card:hover {
-    transform: translateX(5px); /* Décale légèrement à droite */
-}
+/* Effet de glissement au survol */
+.card:hover { transform: translateX(5px); }
 
-.card.bandcamp:hover { border-color: #629aa9; background: #0c1c20; }
-.card.bandcamp:hover i { color: #629aa9; }
-
-.card.youtube:hover { border-color: #ff0000; background: #260a0a; }
-.card.youtube:hover i { color: #ff0000; }
-
-.card.facebook:hover { border-color: #1877f2; background: #0a111a; }
-.card.facebook:hover i { color: #1877f2; }
-
-/* Styles génériques pour Audio.com et Hearthis */
-.card.hearthis:hover, .card.audiocom:hover {
-    border-color: var(--accent);
-    background: #001a1d;
-}
-.card.hearthis:hover i, .card.audiocom:hover i {
-    color: var(--accent);
-}
+/* Couleurs de bordures au survol par réseau */
+.card.bandcamp:hover { border-color: #629aa9; }
+.card.youtube:hover { border-color: #ff0000; }
+.card.facebook:hover { border-color: #1877f2; }
+.card.hearthis:hover, .card.audiocom:hover { border-color: var(--accent); }
 
 footer {
-    margin-top: auto;
     width: 100%;
     text-align: center;
-    padding: 30px;
+    padding: 40px 0;
     font-size: 0.8rem;
-    color: #444;
+    color: #555;
     border-top: 1px solid #111;
 }
 
-footer a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: bold;
-}
+footer a { color: var(--accent); text-decoration: none; }
 
-/* VERSION DESKTOP */
+/* Adaptation pour les écrans d'ordinateurs */
 @media (min-width: 600px) {
-    .social-grid {
-        grid-template-columns: 1fr 1fr; /* Deux colonnes */
-    }
-    .hero {
-        height: 60vh;
-    }
-    .hero h1 {
-        font-size: 6rem;
-    }
+    .social-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 6rem; }
 }

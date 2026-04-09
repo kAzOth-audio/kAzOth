@@ -6,15 +6,17 @@
     <title>KAZOTH | Industrial Transmission</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="hero">
         <div class="hero-content">
-            <div class="logo-wrapper">
-                <img src="kAzOth.vNm.png" alt="KAZOTH" class="main-logo">
-            </div>
-            <p class="subtitle">HARDCORE <span>//</span> DARKCORE <span>//</span> DOOMCORE <span>//</span> INDUSTRIAL <span>//</span> TECHNO</p>
+            <img src="kAzOth.vNm.png" alt="KAZOTH" class="main-logo glitch-target">
+            
+            <p class="subtitle">HARDCORE // DARKCORE // DOOMCORE // INDUSTRIAL // TECHNO</p>
+
+            <div class="hero-data-overlay left">SIGNAL_STATUS: ACTIVE<br>FREQ: DOOM-CORE</div>
+            <div class="hero-data-overlay right">LOCATION: ZONE-01<br>TRANSMISSION: LIVE</div>
         </div>
         <div class="scroll-indicator">
             <span class="scroll-line"></span>
@@ -23,16 +25,19 @@
 
     <main class="core-container">
         <section class="manifesto-section">
-            <h2 class="section-title">MANIFESTO</h2>
-            <p class="manifesto-text">
-                Forging sonic brutality through industrial soundscapes and darkcore rhythms. 
-                This is not just music; it's a mechanical transmission from the abyss.
-            </p>
+            <h2 class="section-title">< > MANIFESTO [ ]</h2>
+            <div class="manifesto-wrapper">
+                <p class="manifesto-text">
+                    Forging sonic brutality through industrial soundscapes and darkcore rhythms. 
+                    This is not just music; it's a mechanical transmission from the abyss.
+                </p>
+                <div class="manifesto-backdrop">MANIFESTO</div>
+            </div>
         </section>
 
         <section class="transmission-section">
-            <h2 class="section-title">LATEST TRANSMISSION</h2>
-            <div class="audio-frame-wrapper neon-glow">
+            <h2 class="section-title">< > LATEST TRANSMISSION [ ]</h2>
+            <div class="audio-frame-wrapper hardware-frame">
                 <iframe 
                     width="100%" height="450" 
                     src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black" 
@@ -40,56 +45,68 @@
                     allowtransparency="true"
                     title="KAZOTH Audio Player">
                 </iframe>
+                <div class="hardware-details">
+                    <span class="detail-light"></span><span class="detail-label">MONITOR: A</span>
+                </div>
             </div>
         </section>
 
         <section class="network-section">
-            <h2 class="section-title">NEURAL NETWORK</h2>
-            <nav class="social-list">
-                <a href="https://linktw.in/bQEHiM" target="_blank" rel="noopener" class="social-item" data-hover="youtube">
-                    <i class="fab fa-youtube"></i>
-                    <span class="social-name">YOUTUBE (Stats)</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+            <h2 class="section-title">< > NEURAL NETWORK [ ]</h2>
+            <nav class="social-grid">
+                
+                <a href="https://linktw.in/bQEHiM" target="_blank" rel="noopener" class="social-item tech-module" data-hover="youtube">
+                    <div class="module-header"><i class="fab fa-youtube"></i><span class="module-id">YOUTUBE.STATS</span></div>
+                    <span class="social-name">VIEW ANALYTICS</span>
+                    <i class="fas fa-chart-line module-icon"></i>
                 </a>
-                <a href="https://soundcloud.com/the_kazoth" target="_blank" rel="noopener" class="social-item" data-hover="soundcloud">
-                    <i class="fab fa-soundcloud"></i>
+                
+                <a href="https://soundcloud.com/the_kazoth" target="_blank" rel="noopener" class="social-item tech-module" data-hover="soundcloud">
+                    <div class="module-header"><i class="fab fa-soundcloud"></i><span class="module-id">SC.LINK</span></div>
                     <span class="social-name">SOUNDCLOUD</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-wave-square module-icon"></i>
                 </a>
-                <a href="https://kazoth.bandcamp.com" target="_blank" rel="noopener" class="social-item" data-hover="bandcamp">
-                    <i class="fab fa-bandcamp"></i>
+                
+                <a href="https://kazoth.bandcamp.com" target="_blank" rel="noopener" class="social-item tech-module" data-hover="bandcamp">
+                    <div class="module-header"><i class="fab fa-bandcamp"></i><span class="module-id">BC.STORE</span></div>
                     <span class="social-name">BANDCAMP</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-shopping-cart module-icon"></i>
                 </a>
-                <a href="https://hearthis.at/kazoth" target="_blank" rel="noopener" class="social-item" data-hover="hearthis">
-                    <i class="fas fa-headphones"></i>
+                
+                <a href="https://hearthis.at/kazoth" target="_blank" rel="noopener" class="social-item tech-module" data-hover="hearthis">
+                    <div class="module-header"><i class="fas fa-headphones"></i><span class="module-id">HT.TRANSMISSION</span></div>
                     <span class="social-name">HEARTHIS</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-broadcast-tower module-icon"></i>
                 </a>
-                <a href="https://audio.com/kazoth" target="_blank" rel="noopener" class="social-item" data-hover="audiocom">
-                    <i class="fas fa-music"></i>
+                
+                <a href="https://audio.com/kazoth" target="_blank" rel="noopener" class="social-item tech-module" data-hover="audiocom">
+                    <div class="module-header"><i class="fas fa-music"></i><span class="module-id">AU.COM.SOURCE</span></div>
                     <span class="social-name">AUDIO.COM</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-file-audio module-icon"></i>
                 </a>
-                <a href="https://www.mixcloud.com/Psykomars" target="_blank" rel="noopener" class="social-item" data-hover="mixcloud">
-                    <i class="fab fa-mixcloud"></i>
+                
+                <a href="https://www.mixcloud.com/Psykomars" target="_blank" rel="noopener" class="social-item tech-module" data-hover="mixcloud">
+                    <div class="module-header"><i class="fab fa-mixcloud"></i><span class="module-id">MC.SESSION</span></div>
                     <span class="social-name">MIXCLOUD</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-mix-tape module-icon"></i>
                 </a>
-                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" rel="noopener" class="social-item" data-hover="tiktok">
-                    <i class="fab fa-tiktok"></i>
+                
+                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" rel="noopener" class="social-item tech-module" data-hover="tiktok">
+                    <div class="module-header"><i class="fab fa-tiktok"></i><span class="module-id">TK.VISUAL</span></div>
                     <span class="social-name">TIKTOK</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-video module-icon"></i>
                 </a>
-                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" rel="noopener" class="social-item" data-hover="facebook">
-                    <i class="fab fa-facebook"></i>
+                
+                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" rel="noopener" class="social-item tech-module" data-hover="facebook">
+                    <div class="module-header"><i class="fab fa-facebook"></i><span class="module-id">FB.CONNECT</span></div>
                     <span class="social-name">FACEBOOK</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-users module-icon"></i>
                 </a>
-                <a href="https://www.instagram.com/the_kazoth" target="_blank" rel="noopener" class="social-item" data-hover="instagram">
-                    <i class="fab fa-instagram"></i>
+                
+                <a href="https://www.instagram.com/the_kazoth" target="_blank" rel="noopener" class="social-item tech-module" data-hover="instagram">
+                    <div class="module-header"><i class="fab fa-instagram"></i><span class="module-id">IG.NETWORK</span></div>
                     <span class="social-name">INSTAGRAM</span>
-                    <i class="fas fa-arrow-right external-icon"></i>
+                    <i class="fas fa-camera-retro module-icon"></i>
                 </a>
             </nav>
         </section>
@@ -97,11 +114,14 @@
 
     <footer class="booking-footer">
         <div class="footer-container">
-            <div class="booking-info">
+            <div class="booking-info tech-module">
+                <div class="module-header"><span class="module-id">CONTACT.CHANNEL</span></div>
                 <span class="info-label">BOOKING & INQUIRIES</span>
                 <a href="mailto:the.kAzOth@gmail.com" class="booking-link">the.kAzOth@gmail.com</a>
             </div>
-            <p class="copyright">© 2026 KAZOTH <span>//</span> TRANSMISSION ENDED</p>
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 KAZOTH <span>//</span> TRANSMISSION ENDED [COORD: ZONE-01]</p>
+            </div>
         </div>
     </footer>
 </body>

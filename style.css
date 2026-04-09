@@ -103,14 +103,13 @@ main {
 
 .card i { font-size: 1.4rem; color: #444; transition: 0.2s; }
 
-/* Real Social Colors on Hover */
-.card:hover { transform: translateX(5px); background: #111; border-color: #333; }
-.card.bandcamp:hover i { color: #629aa9; }
-.card.youtube:hover i { color: #ff0000; }
-.card.hearthis:hover i { color: var(--accent); }
-.card.audiocom:hover i { color: #f2f2f2; }
-.card.facebook:hover i { color: #1877f2; }
-.card.tiktok:hover i { color: #ff0050; }
+/* Couleurs officielles des logos (icônes) */
+.card.bandcamp i { color: #629aa9; }
+.card.youtube i { color: #ff0000; }
+.card.facebook i { color: #1877f2; }
+.card.tiktok i { color: #ff0050; }
+.card.hearthis i { color: #00f2ff; }
+.card.audiocom i { color: #f2f2f2; } /* Blanc brillant officiel pour Audio.com */
 
 footer {
     width: 100%;

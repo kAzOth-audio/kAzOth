@@ -1,80 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kAzOth | DJ & Producer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="translation-bar">
-        <div id="google_translate_element"></div>
-    </div>
-
     <header class="hero">
-        <div class="hero-content">
-            <h1>kAzOth</h1>
-            <p class="subtitle">DJ & PRODUCER</p>
-        </div>
+        <img src="https://files.oaiusercontent.com/file-7pYVf86zZq1r9zYvD9zX8?se=2024-05-23T10%3A30%3A00Z&sp=r&sv=2021-08-06&sr=b&rscc=max-age%3D31536000%2C%20private&rscd=attachment%3B%20filename%3DkAzOth.vNm.jpg&sig=vN9z1zZ9zYvD9zX8zZ9zYvD9zX8%3D" alt="kAzOth Venom" class="main-logo">
+        <p class="subtitle">DJ & PRODUCER</p>
     </header>
 
-    <main>
-        <div class="section-label">LATEST TRANSMISSION</div>
-        <section class="player-section">
-            <div class="iframe-container">
+    <main class="ui-grid">
+        <section class="transmission-section">
+            <div class="ui-tab">LATEST TRANSMISSION</div>
+            <div class="iframe-container neon-glow">
                 <iframe 
-                    style="border:none; border-radius: 8px;" 
-                    width="100%" 
-                    height="450" 
+                    width="100%" height="450" 
                     src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black" 
-                    frameborder="0" 
-                    allowtransparency>
+                    frameborder="0" allowtransparency>
                 </iframe>
             </div>
         </section>
 
-        <div class="section-label">SOCIAL CONNECT</div>
-        <nav class="social-grid">
-            <a href="https://kazoth.bandcamp.com" target="_blank" class="card bandcamp">
-                <i class="fab fa-bandcamp"></i>
-                <span>BANDCAMP</span>
-            </a>
-            <a href="https://www.youtube.com/@The.kAzOth" target="_blank" class="card youtube">
-                <i class="fab fa-youtube"></i>
-                <span>YOUTUBE</span>
-            </a>
-            <a href="https://hearthis.at/kazoth" target="_blank" class="card hearthis">
-                <i class="fas fa-headphones"></i>
-                <span>HEARTHIS.AT</span>
-            </a>
-            <a href="https://audio.com/kazoth" target="_blank" class="card audiocom">
-                <i class="fas fa-music"></i>
-                <span>AUDIO.COM</span>
-            </a>
-            <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="card facebook">
-                <i class="fab fa-facebook"></i>
-                <span>FACEBOOK</span>
-            </a>
-            <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="card tiktok">
-                <i class="fab fa-tiktok"></i>
-                <span>TIKTOK</span>
-            </a>
-        </nav>
+        <section class="social-section">
+            <div class="ui-tab">SOCIAL CONNECT</div>
+            <nav class="social-grid">
+                <a href="https://kazoth.bandcamp.com" target="_blank" class="social-card">
+                    <i class="fab fa-bandcamp"></i> BANDCAMP
+                </a>
+                <a href="https://www.youtube.com/@The.kAzOth" target="_blank" class="social-card has-glow">
+                    <i class="fab fa-youtube"></i> YOUTUBE
+                </a>
+                <a href="https://hearthis.at/kazoth" target="_blank" class="social-card has-glow orange-glow">
+                    <i class="fas fa-headphones"></i> HEARTHIS
+                </a>
+                <a href="https://audio.com/kazoth" target="_blank" class="social-card">
+                    <i class="fas fa-music"></i> AUDIO.COM
+                </a>
+                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="social-card">
+                    <i class="fab fa-facebook"></i> FACEBOOK
+                </a>
+                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="social-card">
+                    <i class="fab fa-tiktok"></i> TIKTOK
+                </a>
+            </nav>
+        </section>
     </main>
 
-    <footer>
-        <p>BOOKING & CONTACT : <a href="mailto:the.kAzOth@gmail.com">THE.KAZOTH@GMAIL.COM</a></p>
+    <footer class="contact-footer">
+        FOR BOOKING AND INQUIRIES: <a href="mailto:the.kAzOth@gmail.com">THE.KAZOTH@GMAIL.COM</a>
     </footer>
-
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

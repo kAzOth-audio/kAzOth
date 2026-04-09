@@ -15,57 +15,56 @@ body {
     align-items: center;
 }
 
-/* RETOUR AU STYLE "KAZOTH" PRÉFÉRÉ */
+/* LE STYLE QUI TE PLAISAIT : TITRE MASSIF ET ÉPURÉ */
 .hero {
     width: 100%;
-    height: 40vh;
+    height: 50vh; /* Plus haut pour donner de l'importance */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     background: radial-gradient(circle at center, #111 0%, #030303 100%);
-    border-bottom: 1px solid #1a1a1a;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 5rem; /* Taille augmentée */
     font-weight: 900;
-    letter-spacing: -3px;
+    letter-spacing: -4px; /* Resserre les lettres pour l'impact */
     margin: 0;
     text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+    color: var(--text);
+    /* Effet néon renforcé */
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.7), 0 0 30px rgba(0, 242, 255, 0.3);
 }
 
 .subtitle {
     color: var(--accent);
-    letter-spacing: 7px;
-    font-size: 0.9rem;
-    margin-top: 5px;
+    letter-spacing: 10px; /* Plus d'espace sous le gros titre */
+    font-size: 0.8rem;
+    margin-top: 10px;
     font-weight: bold;
     text-transform: uppercase;
+    opacity: 0.8;
 }
 
+/* LE RESTE RESTE SIMPLE ET PROPRE */
 main {
     width: 90%;
     max-width: 800px;
-    padding-bottom: 60px;
 }
 
 .content-section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .section-title {
     font-size: 0.9rem;
-    color: #555;
+    color: #444;
     letter-spacing: 2px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    font-weight: bold;
 }
 
-/* MÉDIAS */
 .iframe-container, .video-container {
     border-radius: 8px;
     overflow: hidden;
@@ -84,7 +83,6 @@ main {
     top: 0; left: 0; width: 100%; height: 100%;
 }
 
-/* GRILLE SOCIALE */
 .social-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -94,7 +92,7 @@ main {
 .card {
     background: var(--card-bg);
     border: 1px solid #222;
-    padding: 20px;
+    padding: 22px;
     text-decoration: none;
     color: var(--text);
     font-weight: bold;
@@ -108,19 +106,21 @@ main {
 .card:hover {
     transform: translateX(5px);
     background: #1a1a1a;
+    border-color: var(--accent);
 }
 
-.card i { font-size: 1.5rem; color: var(--accent); width: 30px; text-align: center; }
+.card i { font-size: 1.5rem; color: var(--accent); width: 35px; text-align: center; }
 
 footer {
-    padding: 50px 0;
+    padding: 60px 0;
     font-size: 0.8rem;
     color: #444;
 }
 
 footer a { color: var(--accent); text-decoration: none; }
 
+/* VERSION ORDINATEUR : ENCORE PLUS GRAND */
 @media (min-width: 600px) {
     .social-grid { grid-template-columns: 1fr 1fr; }
-    .hero h1 { font-size: 6rem; }
+    .hero h1 { font-size: 8rem; }
 }

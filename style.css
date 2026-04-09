@@ -10,56 +10,53 @@ body {
     color: #fff;
     font-family: 'Inter', sans-serif;
     margin: 0;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Fond Particules */
 #particleCanvas { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
 
-/* --- CORRECTION LOGO TROP GRAND --- */
+/* --- LOGO : TAILLE RÉDUITE --- */
 .hero {
     width: 100%;
-    padding: 50px 0 60px;
+    padding: 40px 0 60px;
     text-align: center;
     background: radial-gradient(circle, rgba(1, 26, 30, 1) 0%, rgba(2, 2, 2, 1) 80%);
 }
 
 .main-logo {
-    max-width: 600px; /* RÉDUIT : Équilibre parfait */
-    width: 90%;
+    max-width: 500px !important; /* On force la réduction ici */
+    width: 85% !important;
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(0, 242, 255, 0.3));
+    filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.3));
 }
 
-.subtitle-container { margin-top: -20px; }
 .subtitle {
     color: var(--accent-cyan);
-    letter-spacing: 3px;
-    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
     font-weight: 900;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
-    background: rgba(0, 0, 0, 0.7);
-    padding: 8px 15px;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 12px;
     display: inline-block;
+    margin-top: -15px;
 }
 
-/* Grille principale */
+/* Grille */
 .ui-grid {
     width: 95%;
     max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-    margin: 0 auto;
-    padding-bottom: 50px;
 }
 
 .ui-tab {
     font-size: 0.65rem;
     font-weight: 900;
-    letter-spacing: 2px;
-    color: #555;
+    color: #666;
     background: #080808;
     padding: 10px 15px;
     border: 1px solid var(--border-tech);
@@ -67,7 +64,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Booking Card */
 .booking-card {
     background: var(--bg-panel);
     border: 1px solid var(--border-tech);
@@ -87,43 +83,36 @@ body {
     transition: 0.3s;
 }
 
-.btn-contact:hover { background: var(--accent-cyan); color: #000; box-shadow: 0 0 15px var(--accent-cyan); }
-
-/* --- CORRECTION COULEURS RÉSEAUX --- */
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 Icônes par ligne */
-    gap: 10px;
-}
+/* --- COULEURS RÉSEAUX SOCIAUX --- */
+.social-list { display: flex; flex-direction: column; gap: 8px; }
 
 .social-card {
     background: var(--bg-panel);
     border: 1px solid var(--border-tech);
-    padding: 20px;
-    text-align: center;
+    padding: 15px;
     color: #fff;
-    transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.2s;
 }
 
-.social-card i { font-size: 1.5rem; }
-
-/* Forcer les couleurs d'origine */
+/* On force chaque icône avec sa couleur officielle */
 .facebook i   { color: #1877f2 !important; }
 .youtube i    { color: #ff0000 !important; }
-.audiocom i   { color: #fff; } /* Audio.com reste blanc pour le contraste */
+.audiocom i   { color: #ffffff !important; }
 .hearthis i   { color: #ff5500 !important; }
 .mixcloud i   { color: #52aad8 !important; }
 .soundcloud i { color: #ff3300 !important; }
 .bandcamp i   { color: #629aa9 !important; }
 .tiktok i     { color: #ff0050 !important; }
 
-.social-card:hover {
-    border-color: var(--accent-cyan);
-    transform: translateY(-3px);
-}
+.social-card:hover { border-color: var(--accent-cyan); background: #111; }
 
-.footer { padding: 40px; color: #333; font-size: 0.7rem; text-align: center; }
+.contact-footer { padding: 60px; color: #333; font-size: 0.7rem; text-align: center; }
 
-@media (min-width: 950px) {
-    .ui-grid { grid-template-columns: 1.7fr 1fr; }
+@media (min-width: 900px) {
+    .ui-grid { grid-template-columns: 1.6fr 1fr; }
 }

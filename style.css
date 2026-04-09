@@ -1,9 +1,8 @@
 :root {
     --bg: #000000;
-    --card: #111111;
-    --border: #222222;
-    --accent: #00f2ff;
+    --card-bg: #0a0a0a;
     --text: #ffffff;
+    --accent: #00f2ff;
 }
 
 body {
@@ -11,114 +10,115 @@ body {
     color: var(--text);
     font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-/* HEADER - LOGO FLOATING IN THE SEAMLESS BLACK */
-.header {
-    height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    /* FIX: LE FOND EST TRANSPARENT POUR SE FONDRE AVEC LA PAGE */
-    background: transparent;
 }
 
-h1 {
-    font-size: clamp(3rem, 12vw, 8rem);
+/* Header sans image : Pur, noir et non-bloquant */
+.hero {
+    width: 100%;
+    padding: 80px 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    pointer-events: none; /* Empêche le header de bloquer les clics sur les lecteurs */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    pointer-events: auto; /* Permet de sélectionner le texte si besoin */
+}
+
+.hero h1 {
+    font-size: 4rem;
     font-weight: 900;
+    letter-spacing: -3px;
     margin: 0;
-    letter-spacing: -4px;
     text-transform: uppercase;
-    /* STRONG CYAN NEON GLOW FOR LOGO */
-    text-shadow: 0 0 15px rgba(0, 242, 255, 0.7), 0 0 30px rgba(0, 242, 255, 0.3);
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
 }
 
 .subtitle {
     color: var(--accent);
-    letter-spacing: 8px;
-    font-size: 0.8rem;
-    font-weight: 900;
-    margin-top: 10px;
-    /* SUBTITLE ALSO GLOWS */
-    text-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+    letter-spacing: 7px;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-/* CONTENT CONTAINER */
-.container {
+main {
+    width: 90%;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    padding-bottom: 60px;
 }
 
-.section {
+.player-section {
+    width: 100%;
     margin-bottom: 30px;
 }
 
-.media-box {
-    background: var(--card);
+.iframe-container {
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid #1a1a1a;
+    background: var(--card-bg);
 }
 
-.video {
+/* Ratio 16/9 pour YouTube */
+.video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
 }
-
-.video iframe {
+.video-wrapper iframe {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
 }
 
-/* SOCIAL GRID */
-.grid {
+.social-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
 }
 
-.grid-item {
-    background: var(--card);
-    border: 1px solid #222;
-    padding: 20px;
+.card {
+    background: var(--card-bg);
+    border: 1px solid #1a1a1a;
+    padding: 22px;
     text-decoration: none;
     color: var(--text);
     font-weight: 900;
-    text-align: center;
-    transition: 0.2s;
-    border-radius: 4px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 15px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
-.grid-item:hover {
+.card i { font-size: 1.5rem; color: var(--accent); }
+
+.card:hover { 
+    transform: translateX(5px); 
     border-color: var(--accent);
-    background: #1a1a1a;
-    transform: translateY(-2px);
+    background: #111;
 }
 
-.full-width {
-    grid-column: span 1;
-}
-
-/* FOOTER */
 footer {
-    padding: 40px 20px;
+    width: 100%;
     text-align: center;
-    color: #fff;
-    font-size: 0.9rem;
+    padding: 60px 0;
+    font-size: 0.8rem;
+    color: #444;
 }
+
+footer a { color: var(--accent); text-decoration: none; }
 
 @media (min-width: 600px) {
-    .grid { grid-template-columns: 1fr 1fr; }
-    .full-width { grid-column: span 1; }
-    h1 { font-size: 8rem; }
-}
-
+    .social-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 6rem; }
 }

@@ -1,138 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KAZOTH — Official</title>
-  <meta name="description" content="DJ  & PRODUCER" />
-
-  <!-- Police industrielle, condensée et moderne -->
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kAzOth | DJ & Producer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Page wrapper -->
-  <div class="site" id="top">
 
-    <!-- HERO SECTION -->
-    <header class="hero" role="banner" aria-label="KAZOTH hero">
-      <div class="hero__bg" aria-hidden="true"></div>
-      <div class="container hero__inner">
-        <h1 class="hero__title" aria-label="KAZOTH">K A Z O T H</h1>
-        <p class="hero__tag">industrial | darkcore | warehouse frequencies</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#medias">Écouter</a>
-          <a class="btn btn--ghost" href="#about">Explorer</a>
-        </div>
-      </div>
+    <header>
+        <h1>kAzOth</h1>
+        <p class="subtitle">DJ & PRODUCER</p>
     </header>
 
-    <!-- SECTION MÉDIAS -->
     <main>
-      <section id="medias" class="medias" aria-labelledby="medias-title">
-        <div class="container">
-          <h2 id="medias-title" class="section__title">Médias</h2>
+        <section class="player-section">
+            <h2>Dernière Release / Mix</h2>
+            <div class="iframe-container">
+                <iframe src="https://hearthis.at/embed/kazoth/transparent_black/?hcolor=&color=&style=2&block_size=2&block_space=1&background=1&waveform=0&cover=1&autoplay=0&css=" width="100%" height="150" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </section>
 
-          <div class="medias__grid">
-            <!-- Mix card -->
-            <article class="media-card">
-              <div class="media-card__meta">Mix</div>
-              <h3 class="media-card__title">Warehouse Mix 09</h3>
-              <p class="media-card__desc">60 min — live set recorded in an abandoned factory.</p>
-              <audio controls preload="none" class="media-card__audio" aria-label="Warehouse Mix 09 audio">
-                <source src="assets/audio/warehouse-mix-09.mp3" type="audio/mpeg">
-                Votre navigateur ne supporte pas l'élément audio.
-              </audio>
-              <a class="media-card__link" href="#" aria-label="Ouvrir la page du mix">Détails</a>
-            </article>
-
-            <!-- Track card -->
-            <article class="media-card">
-              <div class="media-card__meta">Track</div>
-              <h3 class="media-card__title">Iron Pulse</h3>
-              <p class="media-card__desc">Single — distorted low end, industrial percussion.</p>
-              <audio controls preload="none" class="media-card__audio" aria-label="Iron Pulse audio">
-                <source src="assets/audio/iron-pulse.mp3" type="audio/mpeg">
-              </audio>
-              <a class="media-card__link" href="#" aria-label="Ouvrir la page du track">Détails</a>
-            </article>
-
-            <!-- Video card -->
-            <article class="media-card">
-              <div class="media-card__meta">Video</div>
-              <h3 class="media-card__title">Dystopia Clip</h3>
-              <p class="media-card__desc">Official visual — shot in a derelict warehouse.</p>
-              <div class="media-card__video">
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Dystopia Clip" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </div>
-              <a class="media-card__link" href="#" aria-label="Voir la vidéo complète">Voir</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION RÉSEAUX -->
-      <section id="social" class="social" aria-labelledby="social-title">
-        <div class="container">
-          <h2 id="social-title" class="section__title">Réseaux</h2>
-
-          <div class="social__grid" role="list">
-            <!-- Each item uses an inline SVG icon for crisp monochrome rendering -->
-            <a class="social__item" href="#" role="listitem" aria-label="audio.com">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3"/></svg>
-              <span>audio.com</span>
+        <nav class="social-grid">
+            <a href="https://hearthis.at/kazoth" target="_blank" class="card">
+                <span>HEARTHIS.AT</span>
             </a>
-
-            <a class="social__item" href="#" role="listitem" aria-label="hearthis.at">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
-              <span>hearthis.at</span>
+            <a href="https://audio.com/kazoth" target="_blank" class="card">
+                <span>AUDIO.COM</span>
             </a>
-
-            <a class="social__item" href="#" role="listitem" aria-label="Facebook">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h3v3h-3v3h-3V6h-2v-3h2V3z"/></svg>
-              <span>Facebook</span>
+            <a href="https://kazoth.bandcamp.com" target="_blank" class="card">
+                <span>BANDCAMP</span>
             </a>
-
-            <a class="social__item" href="#" role="listitem" aria-label="YouTube">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 8l6 4-6 4z"/></svg>
-              <span>YouTube</span>
+            <a href="https://www.youtube.com/@The.kAzOth" target="_blank" class="card">
+                <span>YOUTUBE</span>
             </a>
-
-            <a class="social__item" href="#" role="listitem" aria-label="Bandcamp">
-              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18"/></svg>
-              <span>Bandcamp</span>
+            <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="card">
+                <span>FACEBOOK</span>
             </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION À PROPOS -->
-      <section id="about" class="about" aria-labelledby="about-title">
-        <div class="container">
-          <h2 id="about-title" class="section__title">À propos</h2>
-          <p class="about__text">
-            KAZOTH forge des paysages sonores industriels — basses lourdes, percussions tranchantes, atmosphères d'entrepôt. Performances live, sorties limitées et collaborations visuelles.
-          </p>
-        </div>
-      </section>
+        </nav>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="container footer__inner">
-        <small class="footer__copy">© <span id="year"></span> KAZOTH — All rights reserved</small>
-        <nav class="footer__links" aria-label="Liens légaux">
-          <a href="#">Contact</a>
-          <a href="#">Press Kit</a>
-        </nav>
-      </div>
+    <footer>
+        <p>Contact & Booking: <a href="mailto:TON_EMAIL@GMAIL.COM">Clique ici pour m'écrire</a></p>
     </footer>
-  </div>
 
-  <script>
-    // Small progressive enhancement: current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>

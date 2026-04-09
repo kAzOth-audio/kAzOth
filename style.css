@@ -1,14 +1,13 @@
 :root {
     --bg: #030303;
-    --card-bg: #0c0c0c;
-    --text: #ffffff;
-    --accent: #00f2ff; /* Cyan kAzOth */
-    --border: #1a1a1a;
+    --accent: #00f2ff;
+    --card-bg: #080808;
+    --border: #151515;
 }
 
 body {
     background-color: var(--bg);
-    color: var(--text);
+    color: white;
     font-family: 'Inter', sans-serif;
     margin: 0;
     display: flex;
@@ -16,103 +15,76 @@ body {
     align-items: center;
 }
 
+#google_translate_element { position: absolute; top: 15px; right: 15px; }
+
 .hero {
-    width: 100%;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
-    position: relative;
-    background: radial-gradient(circle, #0a1a1c 0%, var(--bg) 70%); /* Restored gradient */
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 900;
-    letter-spacing: -3px;
     margin: 0;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px rgba(0, 242, 255, 0.4); /* Shadow restored */
+    letter-spacing: -2px;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
 }
 
 .subtitle {
     color: var(--accent);
-    letter-spacing: 7px;
-    font-size: 0.9rem;
-    margin-top: 5px;
+    letter-spacing: 10px;
+    font-size: 0.7rem;
     font-weight: bold;
+    opacity: 0.8;
 }
 
-main {
-    width: 90%;
-    max-width: 800px;
-    padding-bottom: 60px;
-}
+main { width: 90%; max-width: 850px; }
 
-/* Category Separators */
-.category-title {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+/* Style des titres de sections */
+.label {
+    font-size: 0.65rem;
+    font-weight: 900;
+    letter-spacing: 4px;
     color: #444;
-    border-bottom: 1px solid #111;
-    padding-bottom: 10px;
-    margin: 40px 0 20px 0;
-}
-
-.media-section {
-    width: 100%;
-    margin-bottom: 30px;
+    margin: 40px 0 15px;
 }
 
 .iframe-container {
-    border-radius: 8px;
-    overflow: hidden;
     border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
     background: #000;
 }
 
 .social-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
 }
 
 .card {
     background: var(--card-bg);
     border: 1px solid var(--border);
-    padding: 20px;
+    padding: 15px;
     text-decoration: none;
-    color: var(--text);
+    color: #888;
+    font-size: 0.7rem;
     font-weight: bold;
     display: flex;
     align-items: center;
-    gap: 15px;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    gap: 10px;
+    transition: 0.2s;
 }
 
-.card i { font-size: 1.5rem; transition: color 0.2s; }
+.card:hover { border-color: var(--accent); color: white; transform: translateY(-2px); }
 
-/* Real Social Brand Colors on Hover */
-.card:hover { transform: translateX(5px); border-color: #333; }
-.card.bandcamp:hover { border-color: #629aa9; color: #629aa9; }
-.card.youtube:hover { border-color: #ff0000; color: #ff0000; }
-.card.hearthis:hover { border-color: var(--accent); color: var(--accent); }
-.card.audiocom:hover { border-color: #f2f2f2; color: #f2f2f2; }
-.card.facebook:hover { border-color: #1877f2; color: #1877f2; }
-.card.tiktok:hover { border-color: #ff0050; color: #ff0050; }
-
-footer {
-    width: 100%;
-    text-align: center;
-    padding: 60px 0;
-    font-size: 0.8rem;
-    color: #333;
-    border-top: 1px solid #111;
+.contact-box {
+    padding: 40px 0 100px;
+    font-size: 0.7rem;
 }
 
-footer a { color: var(--accent); text-decoration: none; font-weight: bold; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 900; }
 
-@media (min-width: 600px) {
-    .social-grid { grid-template-columns: 1fr 1fr; }
-    .hero h1 { font-size: 6rem; }
+@media (max-width: 600px) {
+    .hero h1 { font-size: 3.5rem; }
 }

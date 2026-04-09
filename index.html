@@ -3,66 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kAzOth | Transmission</title>
+    <title>kAzOth | Industrial Transmission</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <canvas id="particleCanvas"></canvas>
 
     <header class="hero">
         <img src="kAzOth.vNm.png" alt="kAzOth Venom" class="main-logo">
         <div class="subtitle-container">
-            <p class="subtitle">HARDCORE / DARKCORE / DOOMCORE / INDUSTRIAL / TECHNO</p>
+            <p class="subtitle glitch-text" data-text="HARDCORE / DARKCORE / DOOMCORE / INDUSTRIAL / TECHNO">
+                HARDCORE / DARKCORE / DOOMCORE / INDUSTRIAL / TECHNO
+            </p>
         </div>
     </header>
 
     <main class="ui-grid">
         <section class="transmission-section">
-            <div class="ui-tab">LATEST TRANSMISSION</div>
+            <div class="ui-tab"><i class="fas fa-broadcast-tower"></i> LATEST TRANSMISSION</div>
             <div class="iframe-container neon-glow">
-                <iframe 
-                    width="100%" height="450" 
-                    src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black" 
-                    frameborder="0" allowtransparency>
-                </iframe>
+                <iframe width="100%" height="450" src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black" frameborder="0" allowtransparency></iframe>
             </div>
         </section>
 
-        <section class="social-section">
-            <div class="ui-tab">SOCIAL CONNECT</div>
-            <nav class="social-grid">
-                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="social-card facebook">
-                    <i class="fab fa-facebook"></i> FACEBOOK
-                </a>
-                <a href="https://www.youtube.com/@The.kAzOth" target="_blank" class="social-card youtube">
-                    <i class="fab fa-youtube"></i> YOUTUBE
-                </a>
-                <a href="https://audio.com/kazoth" target="_blank" class="social-card audiocom">
-                    <i class="fas fa-music"></i> AUDIO.COM
-                </a>
-                <a href="https://hearthis.at/kazoth" target="_blank" class="social-card hearthis">
-                    <i class="fas fa-headphones"></i> HEARTHIS
-                </a>
-                <a href="https://www.mixcloud.com/Psykomars" target="_blank" class="social-card mixcloud">
-                    <i class="fab fa-mixcloud"></i> MIXCLOUD
-                </a>
-                <a href="https://soundcloud.com/the_kazoth" target="_blank" class="social-card soundcloud">
-                    <i class="fab fa-soundcloud"></i> SOUNDCLOUD
-                </a>
-                <a href="https://kazoth.bandcamp.com" target="_blank" class="social-card bandcamp">
-                    <i class="fab fa-bandcamp"></i> BANDCAMP
-                </a>
-                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="social-card tiktok">
-                    <i class="fab fa-tiktok"></i> TIKTOK
-                </a>
-            </nav>
-        </section>
+        <aside class="sidebar">
+            <section class="booking-section">
+                <div class="ui-tab">BOOKING / CONTACT</div>
+                <div class="booking-card">
+                    <p>AVAILABLE FOR GIGS WORLDWIDE</p>
+                    <a href="mailto:the.kAzOth@gmail.com" class="btn-contact">SEND ENQUIRY</a>
+                </div>
+            </section>
+
+            <section class="social-section">
+                <div class="ui-tab">CONNECT</div>
+                <nav class="social-grid">
+                    <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="social-card facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@The.kAzOth" target="_blank" class="social-card youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://audio.com/kazoth" target="_blank" class="social-card audiocom"><i class="fas fa-music"></i></a>
+                    <a href="https://hearthis.at/kazoth" target="_blank" class="social-card hearthis"><i class="fas fa-headphones"></i></a>
+                    <a href="https://www.mixcloud.com/Psykomars" target="_blank" class="social-card mixcloud"><i class="fab fa-mixcloud"></i></a>
+                    <a href="https://soundcloud.com/the_kazoth" target="_blank" class="social-card soundcloud"><i class="fab fa-soundcloud"></i></a>
+                    <a href="https://kazoth.bandcamp.com" target="_blank" class="social-card bandcamp"><i class="fab fa-bandcamp"></i></a>
+                    <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="social-card tiktok"><i class="fab fa-tiktok"></i></a>
+                </nav>
+            </section>
+        </aside>
     </main>
 
     <footer class="contact-footer">
-        FOR BOOKING AND INQUIRIES: <a href="mailto:the.kAzOth@gmail.com">THE.KAZOTH@GMAIL.COM</a>
+        © 2026 kAzOth | DESIGNED FOR DARKNESS
     </footer>
 
+    <script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let particles = [];
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 242, 255, 0.2)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        function init() { for (let i = 0; i < 100; i++) particles.push(new Particle()); }
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            requestAnimationFrame(animate);
+        }
+        init(); animate();
+    </script>
 </body>
 </html>

@@ -1,8 +1,9 @@
 :root {
-    --bg: #050505;
-    --card-bg: #111;
+    --bg: #080808;
+    --card-bg: #121212;
     --text: #ffffff;
-    --accent: #00f2ff; /* Cyan électrique */
+    --accent: #00f2ff;
+    --dim-text: #666;
 }
 
 body {
@@ -10,99 +11,158 @@ body {
     color: var(--text);
     font-family: 'Inter', sans-serif;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-header h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 0;
-    text-transform: uppercase;
+/* Header pro avec hiérarchie stricte */
+.main-header {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at center, #151515 0%, var(--bg) 100%);
+}
+
+.header-inner {
     text-align: center;
+}
+
+.main-header h1 {
+    font-size: clamp(3.5rem, 10vw, 7rem); /* Taille adaptative pro */
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin: 0;
+    line-height: 1;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.separator {
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    margin: 20px auto;
 }
 
 .subtitle {
-    color: var(--accent);
-    letter-spacing: 5px;
-    font-size: 0.8rem;
-    margin-top: 5px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
-.player-section {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 40px;
-}
-
-h2 {
     font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    color: var(--accent);
     text-transform: uppercase;
-    color: #666;
+    margin: 0;
+}
+
+/* Container & Sections */
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+.media-unit {
+    margin-bottom: 60px;
+}
+
+.label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--dim-text);
     margin-bottom: 15px;
-}
-
-.iframe-container {
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--card-bg);
-}
-
-/* Fix pour la vidéo YouTube pour garder le bon format */
-.iframe-container iframe[src*="youtube"] {
     display: block;
-    aspect-ratio: 16 / 9;
 }
 
-.social-grid {
+.media-wrapper {
+    background: var(--card-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #1a1a1a;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.video-ratio {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-ratio iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* Grille de liens pro */
+.links-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
-    width: 100%;
-    max-width: 600px;
+    gap: 12px;
 }
 
-.card {
+.link-card {
     background: var(--card-bg);
-    border: 1px solid #222;
-    padding: 20px;
+    padding: 24px;
+    border-radius: 4px;
     text-decoration: none;
     color: var(--text);
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease;
-    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card:hover {
-    border-color: var(--accent);
-    background: #1a1a1a;
-    transform: translateY(-2px);
+.link-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
 }
 
-footer {
-    margin-top: 60px;
+.link-card i {
     font-size: 0.8rem;
-    color: #444;
-    text-align: center;
+    color: var(--dim-text);
+    transition: transform 0.3s ease;
 }
 
-footer a {
+.link-card:hover {
+    background: #181818;
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.link-card:hover i {
     color: var(--accent);
-    text-decoration: none;
+    transform: translateX(5px);
 }
 
-/* Version Desktop */
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 80px 20px;
+    border-top: 1px solid #111;
+}
+
+.main-footer p {
+    font-size: 0.8rem;
+    color: var(--dim-text);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.mail-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.mail-link:hover {
+    color: var(--accent);
+}
+
 @media (min-width: 600px) {
-    .social-grid {
+    .links-grid {
         grid-template-columns: 1fr 1fr;
-    }
-    header h1 {
-        font-size: 4rem;
     }
 }

@@ -1,40 +1,68 @@
+<!-- ========================= -->
+<!-- index.html -->
+<!-- ========================= -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAZOTH</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAZOTH</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>KAZOTH</h1>
-        <p class="subtitle">DJ & PRODUCER</p>
-    </header>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>KAZOTH</h1>
+      <p class="tagline">Industrial Hardcore Transmission</p>
+      <a href="#media" class="btn">Explorer</a>
+    </div>
+  </section>
 
-    <main>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/8PG440tkycY" frameborder="0" allowfullscreen></iframe>
-        </div>
+  <!-- MEDIA -->
+  <section id="media" class="media">
+    <h2>Media</h2>
+    <div class="media-grid">
+      <div class="media-card">
+        <h3>Latest Mix</h3>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="media-card">
+        <h3>Track</h3>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 
-        <div class="audio-container">
-            <iframe src="https://app.hearthis.at/kazoth/embed/?hcolor=00f2ff&css=&skin=black" width="100%" height="350" frameborder="0"></iframe>
-        </div>
+  <!-- SOCIAL -->
+  <section class="social">
+    <h2>Links</h2>
+    <div class="social-grid">
+      <a href="#" class="social-btn">audio.com</a>
+      <a href="#" class="social-btn">hearthis.at</a>
+      <a href="#" class="social-btn">Facebook</a>
+      <a href="#" class="social-btn">YouTube</a>
+      <a href="#" class="social-btn">Bandcamp</a>
+    </div>
+  </section>
 
-        <nav class="links">
-            <a href="https://hearthis.at/kazoth" target="_blank">HEARTHIS.AT</a>
-            <a href="https://audio.com/kazoth" target="_blank">AUDIO.COM</a>
-            <a href="https://kazoth.bandcamp.com" target="_blank">BANDCAMP</a>
-            <a href="https://www.youtube.com/@The.kAzOth" target="_blank">YOUTUBE</a>
-            <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank">FACEBOOK</a>
-        </nav>
-    </main>
+  <!-- ABOUT -->
+  <section class="about">
+    <h2>About</h2>
+    <p>KAZOTH explores the darker spectrum of industrial hardcore, merging raw textures, oppressive atmospheres and relentless rhythms.</p>
+  </section>
 
-    <footer>
-        <a href="mailto:the.kAzOth@gmail.com">the.kAzOth@gmail.com</a>
-    </footer>
+  <!-- FOOTER -->
+  <footer>
+    <p>© KAZOTH</p>
+  </footer>
 
 </body>
 </html>

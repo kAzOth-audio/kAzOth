@@ -25,7 +25,7 @@ body {
     align-items: center;
     justify-content: center;
     /* --- RÉGLAGE IMAGE DE FOND --- */
-    background-image: url('banniere.jpg'); /* REMPLACE LE NOM SI BESOIN */
+    background-image: url('banniere.png'); /* REMPLACE LE NOM SI BESOIN */
     background-size: cover; /* L'image s'adapte sans se déformer */
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat;

@@ -31,37 +31,6 @@ body {
 }
 
 
-
-/* Configuration de la bannière avec ton image PNG */
-
-.hero {
-
-    width: 100%;
-
-    height: 50vh;
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background-image: url('banniere.png'); /* Extension corrigée en .png */
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-
-    margin-bottom: 30px;
-
-}
-
-
-
 .hero .overlay {
 
     position: absolute;

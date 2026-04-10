@@ -1,243 +1,121 @@
 :root {
-    --core-cyan: #00f2ff;
-    --core-red: #ff003c;
-    --dark-cyan: rgba(0, 242, 255, 0.1);
-    --void: #020202;
-    --surface: rgba(10, 10, 10, 0.8);
-    --steel: #1a1a1a;
-    --text-high: #ffffff;
-    --text-low: #777777;
-    
-    --font-ui: 'Rajdhani', sans-serif;
-    --font-data: 'JetBrains Mono', monospace;
+    --neon-cyan: #00f2ff;
+    --neon-red: #ff003c;
+    --bg-black: #050505;
+    --panel-bg: rgba(15, 15, 15, 0.9);
+    --border-dim: rgba(255, 255, 255, 0.1);
+    --font-main: 'Rajdhani', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
     --font-display: 'Orbitron', sans-serif;
-    --ease-elite: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
 
 body {
-    background-color: var(--void);
-    color: var(--text-high);
-    font-family: var(--font-ui);
+    background: var(--bg-black);
+    color: #fff;
+    font-family: var(--font-main);
     overflow-x: hidden;
 }
 
-/* =========================================
-   MOTEUR D'ARRIÈRE-PLAN (Pluie de données & Grille)
-========================================= */
-.void-engine { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+/* --- BACKGROUND ENGINE --- */
+.background-engine { position: fixed; inset: 0; z-index: -1; }
+.grid-layer {
+    position: absolute; inset: -50%;
+    background-image: linear-gradient(var(--border-dim) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--border-dim) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(1000px) rotateX(60deg);
+    animation: gridMove 30s linear infinite;
+}
+@keyframes gridMove { 100% { transform: perspective(1000px) rotateX(60deg) translateY(50px); } }
 
-.kinetic-grid {
-    position: absolute; width: 200%; height: 200%; top: -50%; left: -50%;
-    background-image: linear-gradient(var(--dark-cyan) 1px, transparent 1px), linear-gradient(90deg, var(--dark-cyan) 1px, transparent 1px);
-    background-size: 80px 80px;
-    transform: perspective(800px) rotateX(60deg);
-    animation: panGrid 20s linear infinite;
+.scanline {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.05) 50%, transparent);
+    background-size: 100% 4px;
+    animation: scan 8s linear infinite;
+}
+@keyframes scan { 100% { background-position: 0 100vh; } }
+
+/* --- HEADER & ILLUMINATED GENRES --- */
+.main-header { padding: 2rem; border-bottom: 1px solid var(--border-dim); }
+.status-bar { 
+    display: flex; justify-content: space-between; 
+    font-family: var(--font-code); font-size: 0.7rem; color: var(--neon-cyan);
+    margin-bottom: 4rem; opacity: 0.6;
 }
 
-@keyframes panGrid { 100% { transform: perspective(800px) rotateX(60deg) translateY(80px); } }
+.branding-core { text-align: center; margin-bottom: 6rem; }
+.logo-main { width: 100%; max-width: 600px; filter: drop-shadow(0 0 20px rgba(0,242,255,0.2)); }
 
-/* Simulation de chute de données discrète */
-.data-rain {
-    position: absolute; width: 100%; height: 100%;
-    background: repeating-linear-gradient(180deg, transparent 0, transparent 2px, rgba(0,242,255,0.03) 3px, transparent 4px);
-    background-size: 100% 200%;
-    animation: rain 15s linear infinite;
-}
-@keyframes rain { 100% { background-position: 0 100%; } }
-
-.vignette-mask { position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at center, transparent 20%, var(--void) 95%); }
-
-/* =========================================
-   STRUCTURE
-========================================= */
-.core-mainframe { width: 100%; max-width: 1300px; margin: 0 auto; padding: clamp(2rem, 5vw, 6rem) 1.5rem; }
-
-/* =========================================
-   LE CHEF-D'OEUVRE : HOLOGRAM GLITCH LOGO
-========================================= */
-.hero-monolith { text-align: center; margin-bottom: clamp(6rem, 15vw, 12rem); }
-
-.hologram-projector {
-    position: relative; width: 100%; max-width: 1000px; margin: 0 auto 3rem;
-    perspective: 1000px; /* Ajoute de la profondeur 3D */
+.genre-cluster {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;
+    margin-top: 2rem;
 }
 
-/* La classe maîtresse pour les images */
-.holo-layer {
-    width: 100%; height: auto;
-    position: absolute; top: 0; left: 0;
-    will-change: transform, clip-path;
+.genre-item {
+    font-family: var(--font-display); font-size: 0.8rem; letter-spacing: 3px;
+    padding: 5px 15px; border: 1px solid var(--border-dim);
+    color: #555; transition: 0.3s;
 }
 
-/* La base normale qui "flotte" en 3D */
-.holo-layer.base {
-    position: relative; z-index: 3;
-    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.9));
-    animation: float3D 6s ease-in-out infinite;
+/* L'effet d'illumination demandé */
+.genre-item.pulse-1 { animation: neonPulse 2s infinite alternate; }
+.genre-item.pulse-2 { animation: neonPulse 2s infinite alternate 0.6s; }
+.genre-item.pulse-3 { animation: neonPulse 2s infinite alternate 1.2s; }
+
+@keyframes neonPulse {
+    from { color: #444; border-color: var(--border-dim); text-shadow: none; }
+    to { color: var(--neon-cyan); border-color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); box-shadow: inset 0 0 10px rgba(0,242,255,0.1); }
 }
 
-/* LA MAGIE : Le décalage Rouge/Cyan découpé au scalpel en temps réel */
-.holo-layer.red-shift {
-    z-index: 2; opacity: 0.8;
-    filter: drop-shadow(-5px 0 0 var(--core-red)) hue-rotate(-30deg);
-    mix-blend-mode: screen; /* Fusionne les lumières pour le côté hologramme */
-    animation: glitchRed 3s infinite linear alternate-reverse;
+/* --- MODULES STRUCTURE --- */
+.content-grid {
+    display: grid; grid-template-columns: repeat(12, 1fr);
+    gap: 2rem; max-width: 1400px; margin: 0 auto; padding: 0 2rem;
 }
 
-.holo-layer.cyan-shift {
-    z-index: 4; opacity: 0.8;
-    filter: drop-shadow(5px 0 0 var(--core-cyan)) hue-rotate(30deg);
-    mix-blend-mode: screen;
-    animation: glitchCyan 2.5s infinite linear alternate-reverse;
+.module { position: relative; background: var(--panel-bg); border: 1px solid var(--border-dim); padding: 1px; }
+.module-tag {
+    position: absolute; top: -10px; left: 10px; background: var(--neon-cyan);
+    color: #000; font-family: var(--font-code); font-size: 0.6rem; padding: 2px 8px; font-weight: 700;
 }
 
-/* Faisceau lumineux sous le logo */
-.projector-beam {
-    position: absolute; bottom: -10%; left: 50%; transform: translateX(-50%);
-    width: 60%; height: 20px;
-    background: radial-gradient(ellipse at center, var(--core-cyan) 0%, transparent 70%);
-    filter: blur(20px); opacity: 0.3;
-    animation: pulseBeam 4s infinite;
+.audio-module { grid-column: span 7; }
+.video-module { grid-column: span 5; }
+.link-module { grid-column: span 12; }
+
+/* Frames avec angles techniques */
+.frame-container { position: relative; padding: 15px; }
+.frame-corner { position: absolute; width: 20px; height: 20px; border: 2px solid var(--neon-cyan); }
+.frame-corner.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
+.frame-corner.br { bottom: 0; right: 0; border-left: none; border-top: none; }
+
+/* --- LINKS GRID --- */
+.links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.node {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 3rem; text-decoration: none; color: #777; border: 1px solid var(--border-dim);
+    transition: 0.4s;
 }
+.node i { font-size: 2rem; margin-bottom: 1rem; }
+.node:hover { background: rgba(0, 242, 255, 0.05); color: #fff; border-color: var(--neon-cyan); }
 
-/* ANIMATIONS MATHÉMATIQUES DU LOGO */
-@keyframes float3D {
-    0%, 100% { transform: translateY(0) rotateX(2deg) rotateY(0); }
-    50% { transform: translateY(-15px) rotateX(-2deg) rotateY(2deg); filter: drop-shadow(0 25px 40px rgba(0,242,255,0.2)); }
+/* --- FOOTER CTA --- */
+.main-footer { padding: 8rem 2rem; text-align: center; }
+.booking-cta {
+    display: inline-block; padding: 2rem 4rem; border: 1px solid var(--neon-red);
+    text-decoration: none; transition: 0.5s; position: relative;
 }
+.cta-label { display: block; font-family: var(--font-code); color: var(--neon-red); font-size: 0.8rem; }
+.cta-email { display: block; font-family: var(--font-display); font-size: 1.5rem; color: #fff; margin-top: 10px; }
 
-/* Découpe brutale horizontale aléatoire */
-@keyframes glitchRed {
-    0% { clip-path: inset(20% 0 80% 0); transform: translate(-3px, 1px); }
-    10% { clip-path: inset(60% 0 10% 0); transform: translate(3px, -2px); }
-    20% { clip-path: inset(40% 0 40% 0); transform: translate(-3px, 1px); }
-    30% { clip-path: inset(10% 0 80% 0); transform: translate(3px, 0px); }
-    40% { clip-path: inset(80% 0 10% 0); transform: translate(-3px, -1px); }
-    50% { clip-path: inset(30% 0 50% 0); transform: translate(3px, 1px); }
-    60% { clip-path: inset(70% 0 20% 0); transform: translate(-3px, -2px); }
-    70% { clip-path: inset(10% 0 80% 0); transform: translate(3px, 1px); }
-    80% { clip-path: inset(50% 0 30% 0); transform: translate(-3px, 2px); }
-    90% { clip-path: inset(20% 0 60% 0); transform: translate(3px, -1px); }
-    100% { clip-path: inset(90% 0 5% 0); transform: translate(-3px, 1px); }
-}
+.booking-cta:hover { background: var(--neon-red); }
+.booking-cta:hover .cta-email, .booking-cta:hover .cta-label { color: #000; }
 
-@keyframes glitchCyan {
-    0% { clip-path: inset(10% 0 60% 0); transform: translate(3px, -1px); }
-    15% { clip-path: inset(30% 0 20% 0); transform: translate(-3px, 2px); }
-    35% { clip-path: inset(80% 0 10% 0); transform: translate(3px, -2px); }
-    55% { clip-path: inset(20% 0 50% 0); transform: translate(-3px, 1px); }
-    75% { clip-path: inset(60% 0 30% 0); transform: translate(3px, 2px); }
-    100% { clip-path: inset(5% 0 80% 0); transform: translate(-3px, -1px); }
-}
-
-@keyframes pulseBeam { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.5; width: 70%; } }
-
-/* Classification */
-.classification-bar { display: flex; align-items: center; justify-content: center; gap: clamp(10px, 3vw, 40px); }
-.blade-line { height: 1px; flex-grow: 1; max-width: 150px; background: linear-gradient(90deg, transparent, var(--steel) 50%, transparent); }
-.genre-matrix { font-family: var(--font-display); font-size: clamp(0.6rem, 1.5vw, 1rem); letter-spacing: clamp(2px, 1vw, 6px); color: var(--text-low); }
-.genre-matrix .sep { color: var(--core-cyan); margin: 0 8px; opacity: 0.5; }
-
-/* =========================================
-   CHASSIS MATÉRIEL (AUDIO & VIDEO)
-========================================= */
-.hardware-module { margin-bottom: clamp(5rem, 10vw, 8rem); }
-
-.module-header { display: flex; align-items: baseline; gap: 15px; margin-bottom: 2rem; border-bottom: 1px solid var(--steel); padding-bottom: 10px; }
-.cyber-tag { font-family: var(--font-data); font-size: 0.7rem; color: var(--void); background: var(--core-cyan); padding: 2px 8px; font-weight: 700; }
-.module-title { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 4px; color: var(--text-high); }
-
-.chassis {
-    position: relative; background: var(--surface); padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05); border-top: 1px solid rgba(0, 242, 255, 0.2);
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-    box-shadow: 0 30px 60px rgba(0,0,0,1);
-}
-
-/* LE MONITEUR CRT POUR YOUTUBE */
-.video-container {
-    position: relative; padding-bottom: 56.25%; /* Ratio 16:9 parfait */
-    height: 0; overflow: hidden; background: #000;
-}
-.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-.crt-overlay {
-    position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), radial-gradient(circle, transparent 50%, rgba(0,0,0,0.4) 100%);
-    background-size: 100% 4px, 100% 100%;
-    pointer-events: none; /* Laisse le clic passer à travers pour lire la vidéo */
-    z-index: 10;
-}
-
-/* =========================================
-   GRILLE NEURALE (RÉSEAUX)
-========================================= */
-.matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-
-.cyber-node {
-    position: relative; height: 100px; background: var(--surface);
-    border: 1px solid var(--steel); display: flex; align-items: center; justify-content: center;
-    text-decoration: none; color: var(--text-low);
-    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-    transition: all 0.4s var(--ease-elite); overflow: hidden;
-}
-
-.node-content { display: flex; align-items: center; gap: 20px; z-index: 2; transition: transform 0.4s var(--ease-elite); }
-.cyber-node i { font-size: 2rem; transition: color 0.3s ease; }
-.node-label { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 3px; }
-
-.target-bracket {
-    position: absolute; top: 50%; transform: translateY(-50%); width: 15px; height: 30px;
-    border: 2px solid var(--core-cyan); opacity: 0; transition: all 0.4s var(--ease-elite);
-}
-.target-bracket.left { left: -20px; border-right: none; }
-.target-bracket.right { right: -20px; border-left: none; }
-
-.cyber-node:hover { background: rgba(0, 242, 255, 0.08); border-color: var(--core-cyan); color: var(--text-high); }
-.cyber-node:hover i { color: var(--core-cyan); filter: drop-shadow(0 0 10px var(--core-cyan)); }
-.cyber-node:hover .node-content { transform: scale(1.05); }
-.cyber-node:hover .target-bracket { opacity: 1; }
-.cyber-node:hover .target-bracket.left { left: 15px; }
-.cyber-node:hover .target-bracket.right { right: 15px; }
-
-/* =========================================
-   COMMAND OVERRIDE (CONTACT)
-========================================= */
-.override-button {
-    display: block; position: relative; background: #050505; border: 1px solid var(--steel);
-    padding: clamp(3rem, 8vw, 5rem) 1rem; text-align: center; text-decoration: none; overflow: hidden;
-    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
-    transition: all 0.5s var(--ease-elite);
-}
-
-.btn-content { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 10px; }
-.prime-data { font-family: var(--font-display); font-size: clamp(1.2rem, 4vw, 2.5rem); color: var(--core-cyan); letter-spacing: 5px; font-weight: 700; }
-.sub-data { font-family: var(--font-data); color: #666; font-size: 0.8rem; }
-
-.btn-scanline {
-    position: absolute; top: -50px; left: -50%; width: 200%; height: 50px;
-    background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.25), transparent);
-    transform: rotate(10deg); transition: top 0.6s ease; z-index: 1;
-}
-
-.override-button:hover { background: #0a0a0a; border-color: var(--core-cyan); box-shadow: 0 0 40px rgba(0,242,255,0.1); }
-.override-button:hover .prime-data { text-shadow: 0 0 20px var(--core-cyan); }
-.override-button:hover .sub-data { color: var(--text-high); }
-.override-button:hover .btn-scanline { top: 150%; }
-
-.system-footprint { text-align: center; margin-top: 3rem; font-family: var(--font-data); font-size: 0.65rem; color: #333; letter-spacing: 3px; }
-
-/* =========================================
-   MOBILE & PERFORMANCE
-========================================= */
-@media (max-width: 768px) {
-    /* Optimisation GPU sur mobile : on garde le glitch mais on arrête le flottement 3D pour la batterie */
-    .holo-layer.base { animation: none; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.9)); }
-    
-    .genre-matrix { display: flex; flex-direction: column; gap: 5px; }
-    .genre-matrix .sep { display: none; }
-    
-    .cyber-node { clip-path: polygon(5px 0, 100% 0, 100% calc(100% - 5px), calc(100% - 5px) 100%, 0 100%, 0 5px); justify-content: flex-start; padding-left: 20px; }
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .audio-module, .video-module { grid-column: span 12; }
+    .status-node:not(.clock) { display: none; }
 }

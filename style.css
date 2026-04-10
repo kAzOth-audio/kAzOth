@@ -9,6 +9,7 @@
     --font-heading: 'Orbitron', sans-serif;
 }
 
+/* Reset & Setup */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -16,9 +17,10 @@ body {
     color: #fff;
     font-family: var(--font-ui);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* FOND COMPLEXE */
+/* BACKGROUNDS ANIMÉS (Optimisés pour performance) */
 .grid-background {
     position: fixed;
     top: 0; left: 0; width: 200%; height: 200%;
@@ -29,9 +31,10 @@ body {
     transform: perspective(500px) rotateX(60deg) translateY(-20%);
     animation: gridMove 20s linear infinite;
     z-index: -1;
+    pointer-events: none;
 }
 
-@keyframes gridMove { 0% { transform: perspective(500px) rotateX(60deg) translateY(0); } 100% { transform: perspective(500px) rotateX(60deg) translateY(50px); } }
+@keyframes gridMove { 100% { transform: perspective(500px) rotateX(60deg) translateY(50px); } }
 
 .laser-scanner {
     position: fixed;
@@ -39,13 +42,14 @@ body {
     background: var(--cyan);
     box-shadow: 0 0 15px var(--cyan);
     z-index: 100;
-    opacity: 0.2;
+    opacity: 0.15;
     animation: scan 8s linear infinite;
+    pointer-events: none;
 }
 
 @keyframes scan { 0% { top: -5%; } 100% { top: 105%; } }
 
-/* HUD DECORATIONS */
+/* HUD DECORATIONS - Invisibles sur très petits écrans */
 .hud-frame .corner {
     position: fixed;
     padding: 10px;
@@ -53,49 +57,58 @@ body {
     font-size: 0.6rem;
     color: var(--cyan);
     letter-spacing: 2px;
-    opacity: 0.5;
+    opacity: 0.4;
     z-index: 200;
+    pointer-events: none;
 }
 .top-left { top: 20px; left: 20px; border-left: 2px solid var(--cyan); border-top: 2px solid var(--cyan); }
 .top-right { top: 20px; right: 20px; border-right: 2px solid var(--cyan); border-top: 2px solid var(--cyan); }
 .bottom-left { bottom: 20px; left: 20px; border-left: 2px solid var(--cyan); border-bottom: 2px solid var(--cyan); }
 .bottom-right { bottom: 20px; right: 20px; border-right: 2px solid var(--cyan); border-bottom: 2px solid var(--cyan); }
 
-/* MAIN CONTAINER */
+/* MAIN CONTAINER RESPONSIVE */
 .main-interface {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1.5rem;
+    padding: clamp(2rem, 8vw, 6rem) 1.5rem;
 }
 
-/* LOGO & GENRES */
-.hero { text-align: center; margin-bottom: 8rem; }
+/* HEADER : LOGO & GENRES */
+.hero { text-align: center; margin-bottom: clamp(4rem, 10vw, 8rem); }
 
-.logo-area { position: relative; display: inline-block; margin-bottom: 3rem; }
+.logo-area { position: relative; display: inline-block; width: 100%; margin-bottom: 3rem; }
 
 .mega-logo {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1000px; /* Bridge pour les consoles et PC */
+    height: auto;
     filter: drop-shadow(0 0 10px rgba(0,242,255,0.1));
     animation: breathe 4s ease-in-out infinite;
 }
 
 @keyframes breathe { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px var(--cyan)); } 50% { transform: scale(1.02); filter: drop-shadow(0 0 30px var(--cyan)); } }
 
-.genre-container { display: flex; align-items: center; justify-content: center; gap: 30px; }
-.line-decor { height: 1px; width: 100px; background: linear-gradient(90deg, transparent, var(--cyan)); }
+.genre-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: clamp(10px, 3vw, 30px); 
+}
+.line-decor { height: 1px; flex-grow: 1; max-width: 150px; background: linear-gradient(90deg, transparent, var(--cyan)); }
 .line-decor:last-child { background: linear-gradient(90deg, var(--cyan), transparent); }
 
 .genre-list {
     font-family: var(--font-heading);
-    font-size: 1rem;
-    letter-spacing: 5px;
+    font-size: clamp(0.6rem, 1.5vw, 1rem); /* Fluide selon l'écran */
+    letter-spacing: clamp(2px, 1vw, 5px);
     color: #888;
-    text-shadow: 0 0 5px #000;
+    white-space: nowrap;
 }
 
-/* MODULES ESTRUCTURE */
-.module { margin-bottom: 8rem; }
+/* MODULES UI */
+.module { margin-bottom: clamp(4rem, 10vw, 8rem); }
+
 .module-info {
     font-family: var(--font-mono);
     margin-bottom: 1.5rem;
@@ -103,26 +116,27 @@ body {
     gap: 15px;
     align-items: center;
 }
-.module-num { color: #333; font-size: 1.5rem; font-weight: 900; }
-.module-name { color: var(--cyan); letter-spacing: 2px; font-size: 0.8rem; }
+.module-num { color: #333; font-size: clamp(1rem, 3vw, 1.5rem); font-weight: 900; }
+.module-name { color: var(--cyan); letter-spacing: 2px; font-size: 0.7rem; }
 
+/* DECK AUDIO */
 .deck-frame {
     background: #000;
     border: 1px solid var(--border);
-    padding: 5px;
-    position: relative;
+    padding: clamp(5px, 1vw, 15px);
     box-shadow: 0 0 50px rgba(0,0,0,1);
 }
 
-/* RACK GRID */
+/* RACK GRID UNIVERSELLE */
 .rack-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    /* Grid intelligente : auto-fit remplit selon la largeur */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px;
 }
 
 .rack-slot {
-    height: 120px;
+    min-height: 120px;
     background: var(--card);
     border: 1px solid var(--border);
     display: flex;
@@ -131,35 +145,26 @@ body {
     justify-content: center;
     text-decoration: none;
     color: #555;
-    position: relative;
+    padding: 20px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.rack-slot i { font-size: 2rem; margin-bottom: 10px; }
-.rack-slot span { font-family: var(--font-heading); font-size: 0.65rem; letter-spacing: 2px; }
-
-.rack-slot::before {
-    content: ''; position: absolute; top: 5px; left: 5px; width: 4px; height: 4px;
-    background: #333; border-radius: 50%;
-}
+.rack-slot i { font-size: clamp(1.5rem, 4vw, 2.2rem); margin-bottom: 10px; }
+.rack-slot span { font-family: var(--font-heading); font-size: clamp(0.55rem, 1.2vw, 0.7rem); letter-spacing: 2px; }
 
 .rack-slot:hover {
     border-color: var(--cyan);
     color: #fff;
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.15);
-    background: #111;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2);
 }
 
-.rack-slot:hover i { color: var(--cyan); text-shadow: 0 0 10px var(--cyan); }
-.rack-slot:hover::before { background: var(--cyan); box-shadow: 0 0 5px var(--cyan); }
-
-/* CONTACT */
+/* CONTACT TERMINAL */
 .contact-terminal {
     display: block;
-    background: linear-gradient(45deg, #050505, #111);
+    background: #050505;
     border: 1px solid var(--border);
-    padding: 5rem 2rem;
+    padding: clamp(3rem, 10vw, 6rem) 1rem;
     text-align: center;
     text-decoration: none;
     transition: all 0.3s;
@@ -168,21 +173,46 @@ body {
 .main-mail {
     display: block;
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: clamp(1rem, 5vw, 2.5rem);
     color: var(--cyan);
-    letter-spacing: 5px;
+    letter-spacing: clamp(2px, 1vw, 5px);
     margin-bottom: 1rem;
 }
 
-.sub-mail { font-family: var(--font-mono); color: #333; font-size: 0.8rem; }
+.sub-mail { font-family: var(--font-mono); color: #333; font-size: 0.7rem; }
 
-.contact-terminal:hover { border-color: var(--cyan); background: var(--cyan); }
-.contact-terminal:hover .main-mail, .contact-terminal:hover .sub-mail { color: #000; }
+/* -----------------------------------------------------------
+   MEDIA QUERIES : ADAPTATION SPECIFIQUE
+   ----------------------------------------------------------- */
 
-/* MOBILE */
-@media (max-width: 800px) {
+/* TABLETTES & PETITS LAPTOPS */
+@media (max-width: 1024px) {
     .rack-grid { grid-template-columns: repeat(2, 1fr); }
-    .main-mail { font-size: 1.2rem; }
-    .genre-list { font-size: 0.7rem; }
-    .hud-frame { display: none; }
+    .hud-frame .corner { opacity: 0.2; } /* On estompe le décor */
+}
+
+/* SMARTPHONES & CONSOLES (MODE PORTRAIT) */
+@media (max-width: 600px) {
+    .rack-grid { grid-template-columns: 1fr; } /* Une seule colonne pour cliquer facilement */
+    
+    .hud-frame { display: none; } /* On retire le HUD pour gagner de la place */
+    
+    .line-decor { display: none; } /* On simplifie le header */
+    
+    .rack-slot { min-height: 100px; flex-direction: row; justify-content: flex-start; gap: 25px; padding-left: 30px; }
+    .rack-slot i { margin-bottom: 0; }
+    
+    .mega-logo { width: 95%; }
+}
+
+/* OPTIMISATION CONSOLE (GRANDS ÉCRANS / NAVIGATION MANETTE) */
+@media (min-width: 2000px) {
+    .main-interface { max-width: 1600px; }
+    .mega-logo { max-width: 1400px; }
+}
+
+/* GESTION DU HOVER (Pour éviter les bugs sur tactile) */
+@media (hover: hover) {
+    .contact-terminal:hover { background: var(--cyan); }
+    .contact-terminal:hover .main-mail, .contact-terminal:hover .sub-mail { color: #000; }
 }

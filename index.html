@@ -11,87 +11,85 @@
 </head>
 <body>
 
-    <div class="cyber-bg"></div>
-    <div class="scanlines"></div>
-    <div class="vignette"></div>
+    <div class="hud-frame">
+        <div class="corner top-left">SYS_ID: KAZ-909</div>
+        <div class="corner top-right">STATUS: TRANSMITTING</div>
+        <div class="corner bottom-left">COORD: 48.8566° N</div>
+        <div class="corner bottom-right">V.07_STABLE</div>
+    </div>
 
-    <main class="interface-container">
+    <div class="laser-scanner"></div>
+    <div class="grid-background"></div>
+
+    <main class="main-interface">
         
-        <header class="main-hero">
-            <div class="status-header">
-                <span class="pulse-node"></span> SIGNAL_STRENGTH: OPTIMAL // LOC: ZONE-01
+        <header class="hero">
+            <div class="logo-area">
+                <img src="kAzOth.vNm.png" alt="KAZOTH" class="mega-logo">
+                <div class="logo-shadow"></div>
             </div>
             
-            <div class="logo-viewport">
-                <img src="kAzOth.vNm.png" alt="KAZOTH" class="monolith-logo">
-                <div class="neon-aura"></div>
-            </div>
-
-            <div class="genre-tagline">
-                <span class="glitch" data-text="HARDCORE">HARDCORE</span> // 
-                <span class="glitch" data-text="DARKCORE">DARKCORE</span> // 
-                <span class="glitch" data-text="DOOMCORE">DOOMCORE</span> // 
-                <span class="glitch" data-text="INDUSTRIAL">INDUSTRIAL</span> // 
-                <span class="glitch" data-text="TECHNO">TECHNO</span>
+            <div class="genre-container">
+                <div class="line-decor"></div>
+                <p class="genre-list">HARDCORE // DARKCORE // DOOMCORE // INDUSTRIAL // TECHNO</p>
+                <div class="line-decor"></div>
             </div>
         </header>
 
-        <section class="ui-module">
-            <div class="module-header">
-                <div class="decor-line"></div>
-                <h3 class="module-title">LATEST_TRANSMISSION</h3>
-                <div class="decor-line"></div>
+        <section class="module deck-section">
+            <div class="module-info">
+                <span class="module-num">01</span>
+                <span class="module-name">AUDIO_CORE_SIGNAL</span>
             </div>
-            <div class="audio-deck">
+            <div class="deck-frame">
                 <iframe width="100%" height="450" src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black&playlist=1" frameborder="0" allowtransparency="true"></iframe>
             </div>
         </section>
 
-        <section class="ui-module">
-            <div class="module-header">
-                <div class="decor-line"></div>
-                <h3 class="module-title">NEURAL_NETWORK_LINK</h3>
-                <div class="decor-line"></div>
+        <section class="module network-section">
+            <div class="module-info">
+                <span class="module-num">02</span>
+                <span class="module-name">NEURAL_CONNECTORS</span>
             </div>
             
-            <nav class="network-grid">
-                <a href="https://linktw.in/bQEHiM" target="_blank" class="cyber-card youtube" data-label="YOUTUBE">
-                    <i class="fab fa-youtube"></i>
+            <nav class="rack-grid">
+                <a href="https://linktw.in/bQEHiM" target="_blank" class="rack-slot youtube" data-text="YT">
+                    <i class="fab fa-youtube"></i><span>YOUTUBE</span>
                 </a>
-                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="cyber-card facebook" data-label="FACEBOOK">
-                    <i class="fab fa-facebook-f"></i>
+                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="rack-slot facebook" data-text="FB">
+                    <i class="fab fa-facebook-f"></i><span>FACEBOOK</span>
                 </a>
-                <a href="https://audio.com/kazoth" target="_blank" class="cyber-card audiocom" data-label="AUDIO.COM">
-                    <i class="fas fa-music"></i>
+                <a href="https://audio.com/kazoth" target="_blank" class="rack-slot audiocom" data-text="AU">
+                    <i class="fas fa-music"></i><span>AUDIO.COM</span>
                 </a>
-                <a href="https://hearthis.at/kazoth" target="_blank" class="cyber-card hearthis" data-label="HEARTHIS">
-                    <i class="fas fa-headphones"></i>
+                <a href="https://hearthis.at/kazoth" target="_blank" class="rack-slot hearthis" data-text="HT">
+                    <i class="fas fa-headphones"></i><span>HEARTHIS</span>
                 </a>
-                <a href="https://www.mixcloud.com/Psykomars" target="_blank" class="cyber-card mixcloud" data-label="MIXCLOUD">
-                    <i class="fab fa-mixcloud"></i>
+                <a href="https://www.mixcloud.com/Psykomars" target="_blank" class="rack-slot mixcloud" data-text="MX">
+                    <i class="fab fa-mixcloud"></i><span>MIXCLOUD</span>
                 </a>
-                <a href="https://soundcloud.com/the_kazoth" target="_blank" class="cyber-card soundcloud" data-label="SOUNDCLOUD">
-                    <i class="fab fa-soundcloud"></i>
+                <a href="https://soundcloud.com/the_kazoth" target="_blank" class="rack-slot soundcloud" data-text="SC">
+                    <i class="fab fa-soundcloud"></i><span>SOUNDCLOUD</span>
                 </a>
-                <a href="https://kazoth.bandcamp.com" target="_blank" class="cyber-card bandcamp" data-label="BANDCAMP">
-                    <i class="fab fa-bandcamp"></i>
+                <a href="https://kazoth.bandcamp.com" target="_blank" class="rack-slot bandcamp" data-text="BC">
+                    <i class="fab fa-bandcamp"></i><span>BANDCAMP</span>
                 </a>
-                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="cyber-card tiktok" data-label="TIKTOK">
-                    <i class="fab fa-tiktok"></i>
+                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="rack-slot tiktok" data-text="TK">
+                    <i class="fab fa-tiktok"></i><span>TIKTOK</span>
                 </a>
-                <a href="https://www.instagram.com/the_kazoth" target="_blank" class="cyber-card instagram" data-label="INSTAGRAM">
-                    <i class="fab fa-instagram"></i>
+                <a href="https://www.instagram.com/the_kazoth" target="_blank" class="rack-slot instagram" data-text="IG">
+                    <i class="fab fa-instagram"></i><span>INSTAGRAM</span>
                 </a>
             </nav>
         </section>
 
-        <footer class="terminal-footer">
-            <a href="mailto:the.kAzOth@gmail.com" class="booking-portal">
-                <span class="portal-glitch"></span>
-                <span class="portal-text">THE.KAZOTH@GMAIL.COM</span>
-                <span class="portal-sub">ESTABLISH_CONTACT</span>
+        <footer class="module contact-section">
+            <a href="mailto:the.kAzOth@gmail.com" class="contact-terminal">
+                <div class="glitch-box">
+                    <span class="main-mail">THE.KAZOTH@GMAIL.COM</span>
+                    <span class="sub-mail">INIT_SECURE_COMMS</span>
+                </div>
             </a>
-            <div class="sys-info">SYSTEM_V6 // SECURE_TRANSMISSION // © 2026</div>
         </footer>
 
     </main>

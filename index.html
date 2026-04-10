@@ -3,87 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAZOTH | Transmission Core</title>
+    <title>kAzOth` | Welcome in my World</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="scanline-effect"></div>
+    <div class="ui-vignette"></div>
 
-    <main class="terminal-container">
-        <header class="sys-header">
-            <div class="status-bar">
-                <span class="status-indicator">● LIVE</span>
-                <span class="sys-id">ZONE-01 // FREQ: ERROR909</span>
+    <div class="app-container">
+        
+        <header class="hero-section">
+            <div class="logo-wrapper">
+                <img src="kAzOth.vNm.png" alt="KAZOTH" class="main-brand-logo">
+                <div class="logo-glow"></div>
             </div>
-            
-            <div class="logo-container">
-                <img src="kAzOth.vNm.png" alt="KAZOTH Logo" class="brand-image">
+            <div class="hero-meta">
+                <span class="glitch-text" data-text="INDUSTRIAL_CORE">INDUSTRIAL_CORE</span>
+                <span class="separator">/</span>
+                <span class="glitch-text" data-text="DOOMCORE">DOOMCORE</span>
             </div>
-            
-            <h2 class="sub-classification">HARDCORE / DARKCORE / DOOMCORE / INDUSTRIAL / TECHNO</h2>
         </header>
 
-        <section class="sys-module audio-module">
-            <h3 class="module-title">>> LATEST_TRANSMISSION</h3>
-            <div class="hardware-wrapper">
-                <iframe 
-                    width="100%" height="200" 
-                    src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black" 
-                    frameborder="0" 
-                    allowtransparency="true"
-                    title="KAZOTH Audio Player">
-                </iframe>
+        <section class="module audio-module">
+            <div class="module-header">
+                <span class="module-tag">LIVE_SIGNAL</span>
+                <div class="hr-line"></div>
+            </div>
+            <div class="player-frame">
+                <iframe width="100%" height="180" src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black" frameborder="0" allowtransparency="true"></iframe>
             </div>
         </section>
 
-        <section class="sys-module network-module">
-            <h3 class="module-title">>> NEURAL_NETWORK</h3>
+        <section class="module networks">
+            <div class="module-header">
+                <span class="module-tag">SOCIAL_INTERFACE</span>
+                <div class="hr-line"></div>
+            </div>
             
-            <div class="network-grid">
-                <a href="https://soundcloud.com/the_kazoth" target="_blank" class="net-node primary">
-                    <i class="fab fa-soundcloud"></i>
-                    <span>SOUNDCLOUD</span>
-                </a>
-                <a href="https://kazoth.bandcamp.com" target="_blank" class="net-node primary">
-                    <i class="fab fa-bandcamp"></i>
-                    <span>BANDCAMP</span>
-                </a>
-                <a href="https://www.instagram.com/the_kazoth" target="_blank" class="net-node primary">
-                    <i class="fab fa-instagram"></i>
-                    <span>INSTAGRAM</span>
-                </a>
-                <a href="https://linktw.in/bQEHiM" target="_blank" class="net-node primary">
+            <nav class="links-grid">
+                <a href="https://linktw.in/bQEHiM" target="_blank" class="nav-card youtube">
+                    <div class="card-bg"></div>
                     <i class="fab fa-youtube"></i>
-                    <span>YOUTUBE</span>
+                    <span class="label">YouTube</span>
                 </a>
-
-                <a href="https://hearthis.at/kazoth" target="_blank" class="net-node secondary">
-                    <i class="fas fa-headphones"></i> HEARTHIS
+                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="nav-card facebook">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="label">Facebook</span>
                 </a>
-                <a href="https://audio.com/kazoth" target="_blank" class="net-node secondary">
-                    <i class="fas fa-music"></i> AUDIO.COM
+                <a href="https://audio.com/kazoth" target="_blank" class="nav-card audiocom">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-music"></i>
+                    <span class="label">Audio.com</span>
                 </a>
-                <a href="https://www.mixcloud.com/Psykomars" target="_blank" class="net-node secondary">
-                    <i class="fab fa-mixcloud"></i> MIXCLOUD
+                <a href="https://hearthis.at/kazoth" target="_blank" class="nav-card hearthis">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-headphones"></i>
+                    <span class="label">Hearthis</span>
                 </a>
-                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="net-node secondary">
-                    <i class="fab fa-tiktok"></i> TIKTOK
+                <a href="https://www.mixcloud.com/Psykomars" target="_blank" class="nav-card mixcloud">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-mixcloud"></i>
+                    <span class="label">Mixcloud</span>
                 </a>
-                <a href="https://www.facebook.com/kAzOth.aka.Psykomars" target="_blank" class="net-node secondary">
-                    <i class="fab fa-facebook"></i> FACEBOOK
+                <a href="https://soundcloud.com/the_kazoth" target="_blank" class="nav-card soundcloud">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-soundcloud"></i>
+                    <span class="label">Soundcloud</span>
                 </a>
-            </div>
+                <a href="https://kazoth.bandcamp.com" target="_blank" class="nav-card bandcamp">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-bandcamp"></i>
+                    <span class="label">Bandcamp</span>
+                </a>
+                <a href="https://www.tiktok.com/@the.kazoth" target="_blank" class="nav-card tiktok">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-tiktok"></i>
+                    <span class="label">TikTok</span>
+                </a>
+                <a href="https://www.instagram.com/the_kazoth" target="_blank" class="nav-card instagram">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-instagram"></i>
+                    <span class="label">Instagram</span>
+                </a>
+            </nav>
         </section>
 
-        <footer class="sys-module booking-module">
-            <a href="mailto:the.kAzOth@gmail.com" class="booking-action">
-                <span class="btn-data">[ INITIATE CONTACT ]</span>
-                <span class="btn-text">the.kAzOth@gmail.com</span>
+        <footer class="contact-footer">
+            <div class="module-header">
+                <span class="module-tag">DIRECT_ACCESS</span>
+            </div>
+            <a href="mailto:the.kAzOth@gmail.com" class="booking-btn">
+                <span class="btn-glitch"></span>
+                <span class="btn-content">THE.KAZOTH@GMAIL.COM</span>
             </a>
+            <p class="copyright">KAZOTH // ZONE-01 [2026]</p>
         </footer>
-    </main>
+    </div>
 </body>
 </html>

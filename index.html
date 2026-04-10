@@ -3,88 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAZOTH // INDUSTRIAL COMMAND</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>KAZOTH // OFFICIAL</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;900&family=Rajdhani:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="background-engine">
-        <div class="grid-layer"></div>
+    <div class="system-overlay">
         <div class="scanline"></div>
-        <div class="vignette"></div>
+        <div class="noise"></div>
     </div>
 
-    <div class="ui-wrapper">
-        <header class="main-header">
-            <div class="status-bar">
-                <span class="status-node">SYSTEM: ACTIVE</span>
-                <span class="status-node">LOC: FR_UNDERGROUND</span>
-                <span class="status-node clock">2026_V1</span>
-            </div>
-
-            <div class="branding-core">
-                <div class="logo-container">
-                    <img src="kAzOth.vNm.png" alt="KAZOTH" class="logo-main">
-                    <div class="logo-glitch-layer red"></div>
-                    <div class="logo-glitch-layer cyan"></div>
+    <main class="viewport-frame">
+        <header class="hero-header">
+            <div class="branding-vault">
+                <div class="logo-wrapper">
+                    <img src="kAzOth.vNm.png" alt="KAZOTH" class="logo-primary">
+                    <img src="kAzOth.vNm.png" alt="" class="logo-glitch red" aria-hidden="true">
+                    <img src="kAzOth.vNm.png" alt="" class="logo-glitch cyan" aria-hidden="true">
                 </div>
                 
-                <div class="genre-cluster">
-                    <span class="genre-item pulse-1">HARDCORE</span>
-                    <span class="genre-item pulse-2">DARKCORE</span>
-                    <span class="genre-item pulse-3">DOOMCORE</span>
-                    <span class="genre-item pulse-1">INDUSTRIAL</span>
-                    <span class="genre-item pulse-2">TECHNO</span>
+                <div class="genre-indicator">
+                    <span class="led-tag">HARDCORE</span>
+                    <span class="led-tag">DARKCORE</span>
+                    <span class="led-tag">DOOMCORE</span>
+                    <span class="led-tag">INDUSTRIAL</span>
+                    <span class="led-tag">TECHNO</span>
                 </div>
             </div>
         </header>
 
-        <main class="content-grid">
-            <section class="module audio-module">
-                <div class="module-tag">TRANSMISSION_01</div>
-                <div class="frame-container">
-                    <div class="frame-corner tl"></div>
-                    <div class="frame-corner br"></div>
+        <section class="core-grid">
+            
+            <div class="module audio-core">
+                <div class="module-header">
+                    <span class="id">SYS_01</span><span class="label">AUDIO_STREAM</span>
+                </div>
+                <div class="inner-content">
                     <iframe width="100%" height="400" src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black&playlist=1" frameborder="0"></iframe>
                 </div>
-            </section>
+            </div>
 
-            <section class="module video-module">
-                <div class="module-tag">VISUAL_FEED_02</div>
-                <div class="crt-container">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=PLYFvpPGIc3kxEhqPzqQI0R8DOSDgMnRrd" frameborder="0" allowfullscreen></iframe>
+            <div class="module video-core">
+                <div class="module-header">
+                    <span class="id">SYS_02</span><span class="label">VISUAL_FEED</span>
                 </div>
-            </section>
+                <div class="video-deck">
+                    <div class="video-aspect-ratio">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLYFvpPGIc3kxEhqPzqQI0R8DOSDgMnRrd" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
 
-            <section class="module link-module">
-                <div class="module-tag">NEURAL_LINKS_03</div>
-                <nav class="links-grid">
-                    <a href="https://soundcloud.com/the_kazoth" target="_blank" class="node">
-                        <i class="fab fa-soundcloud"></i><span>SOUNDCLOUD</span>
-                    </a>
-                    <a href="https://kazoth.bandcamp.com" target="_blank" class="node">
-                        <i class="fab fa-bandcamp"></i><span>BANDCAMP</span>
-                    </a>
-                    <a href="https://www.instagram.com/the_kazoth" target="_blank" class="node">
-                        <i class="fab fa-instagram"></i><span>INSTAGRAM</span>
-                    </a>
-                    <a href="https://www.mixcloud.com/Psykomars" target="_blank" class="node">
-                        <i class="fab fa-mixcloud"></i><span>MIXCLOUD</span>
-                    </a>
+            <div class="module neural-core">
+                <div class="module-header">
+                    <span class="id">SYS_03</span><span class="label">NEURAL_LINKS</span>
+                </div>
+                <nav class="matrix-grid">
+                    <a href="https://linktw.in/bQEHiM" class="node"><i class="fab fa-youtube"></i><span>YOUTUBE</span></a>
+                    <a href="https://www.facebook.com/kAzOth.aka.Psykomars" class="node"><i class="fab fa-facebook-f"></i><span>FACEBOOK</span></a>
+                    <a href="https://audio.com/kazoth" class="node"><i class="fas fa-music"></i><span>AUDIO.COM</span></a>
+                    <a href="https://hearthis.at/kazoth" class="node"><i class="fas fa-headphones"></i><span>HEARTHIS</span></a>
+                    <a href="https://www.mixcloud.com/Psykomars" class="node"><i class="fab fa-mixcloud"></i><span>MIXCLOUD</span></a>
+                    <a href="https://soundcloud.com/the_kazoth" class="node"><i class="fab fa-soundcloud"></i><span>SOUNDCLOUD</span></a>
+                    <a href="https://kazoth.bandcamp.com" class="node"><i class="fab fa-bandcamp"></i><span>BANDCAMP</span></a>
+                    <a href="https://www.tiktok.com/@the.kazoth" class="node"><i class="fab fa-tiktok"></i><span>TIKTOK</span></a>
+                    <a href="https://www.instagram.com/the_kazoth" class="node"><i class="fab fa-instagram"></i><span>INSTAGRAM</span></a>
                 </nav>
-            </section>
-        </main>
+            </div>
+        </section>
 
-        <footer class="main-footer">
-            <a href="mailto:the.kAzOth@gmail.com" class="booking-cta">
-                <span class="cta-label">INITIATE_BOOKING</span>
-                <span class="cta-email">THE.KAZOTH@GMAIL.COM</span>
+        <footer class="system-footer">
+            <a href="mailto:the.kAzOth@gmail.com" class="terminal-btn">
+                <div class="glitch-text" data-text="INITIATE_CONTACT">INITIATE_CONTACT</div>
+                <div class="email-sub">THE.KAZOTH@GMAIL.COM</div>
             </a>
+            <div class="meta-data">KAZOTH // CORE_VERSION_2026 // ALL_RIGHTS_RESERVED</div>
         </footer>
-    </div>
+    </main>
 
 </body>
 </html>

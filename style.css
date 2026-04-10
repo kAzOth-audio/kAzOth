@@ -1,87 +1,108 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAZOTH // OFFICIAL</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+:root {
+    --core-cyan: #00f2ff;
+    --core-red: #ff003c;
+    --bg: #020202;
+    --panel: #0a0a0a;
+    --border: rgba(255, 255, 255, 0.08);
+    --font-ui: 'Rajdhani', sans-serif;
+    --font-data: 'JetBrains Mono', monospace;
+    --font-logo: 'Orbitron', sans-serif;
+}
 
-    <div class="system-overlay">
-        <div class="scanline"></div>
-        <div class="noise"></div>
-    </div>
+/* RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+body { background: var(--bg); color: #fff; font-family: var(--font-ui); overflow-x: hidden; line-height: 1.2; }
 
-    <main class="viewport-frame">
-        <header class="hero-header">
-            <div class="branding-vault">
-                <div class="logo-wrapper">
-                    <img src="kAzOth.vNm.png" alt="KAZOTH" class="logo-primary">
-                    <img src="kAzOth.vNm.png" alt="" class="logo-glitch red" aria-hidden="true">
-                    <img src="kAzOth.vNm.png" alt="" class="logo-glitch cyan" aria-hidden="true">
-                </div>
-                
-                <div class="genre-indicator">
-                    <span class="led-tag">HARDCORE</span>
-                    <span class="led-tag">DARKCORE</span>
-                    <span class="led-tag">DOOMCORE</span>
-                    <span class="led-tag">INDUSTRIAL</span>
-                    <span class="led-tag">TECHNO</span>
-                </div>
-            </div>
-        </header>
+/* AMBIANCE SYSTEM */
+.system-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 100; }
+.scanline { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent, rgba(0, 242, 255, 0.03) 50%, transparent); background-size: 100% 4px; animation: scan 10s linear infinite; }
+@keyframes scan { 100% { background-position: 0 100vh; } }
 
-        <section class="core-grid">
-            
-            <div class="module audio-core">
-                <div class="module-header">
-                    <span class="id">SYS_01</span><span class="label">AUDIO_STREAM</span>
-                </div>
-                <div class="inner-content">
-                    <iframe width="100%" height="400" src="https://hearthis.at/kazoth/embed/?hcolor=00f2ff&skin=black&playlist=1" frameborder="0"></iframe>
-                </div>
-            </div>
+/* VIEWPORT MAIN */
+.viewport-frame { width: 100%; max-width: 1600px; margin: 0 auto; padding: 20px; }
 
-            <div class="module video-core">
-                <div class="module-header">
-                    <span class="id">SYS_02</span><span class="label">VISUAL_FEED</span>
-                </div>
-                <div class="video-deck">
-                    <div class="video-aspect-ratio">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLYFvpPGIc3kxEhqPzqQI0R8DOSDgMnRrd" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
+/* HERO - LOGO XXL */
+.hero-header { padding: clamp(4rem, 10vh, 10rem) 0; border-bottom: 1px solid var(--border); margin-bottom: 4rem; text-align: center; }
+.logo-wrapper { position: relative; display: inline-block; width: 90%; max-width: 1100px; }
+.logo-primary { width: 100%; height: auto; position: relative; z-index: 2; filter: drop-shadow(0 0 30px rgba(0,242,255,0.1)); }
+.logo-glitch { position: absolute; inset: 0; width: 100%; opacity: 0.5; z-index: 1; }
+.logo-glitch.red { filter: drop-shadow(-5px 0 var(--core-red)); animation: glitch 4s infinite alternate; }
+.logo-glitch.cyan { filter: drop-shadow(5px 0 var(--core-cyan)); animation: glitch 3s infinite alternate-reverse; }
 
-            <div class="module neural-core">
-                <div class="module-header">
-                    <span class="id">SYS_03</span><span class="label">NEURAL_LINKS</span>
-                </div>
-                <nav class="matrix-grid">
-                    <a href="https://linktw.in/bQEHiM" class="node"><i class="fab fa-youtube"></i><span>YOUTUBE</span></a>
-                    <a href="https://www.facebook.com/kAzOth.aka.Psykomars" class="node"><i class="fab fa-facebook-f"></i><span>FACEBOOK</span></a>
-                    <a href="https://audio.com/kazoth" class="node"><i class="fas fa-music"></i><span>AUDIO.COM</span></a>
-                    <a href="https://hearthis.at/kazoth" class="node"><i class="fas fa-headphones"></i><span>HEARTHIS</span></a>
-                    <a href="https://www.mixcloud.com/Psykomars" class="node"><i class="fab fa-mixcloud"></i><span>MIXCLOUD</span></a>
-                    <a href="https://soundcloud.com/the_kazoth" class="node"><i class="fab fa-soundcloud"></i><span>SOUNDCLOUD</span></a>
-                    <a href="https://kazoth.bandcamp.com" class="node"><i class="fab fa-bandcamp"></i><span>BANDCAMP</span></a>
-                    <a href="https://www.tiktok.com/@the.kazoth" class="node"><i class="fab fa-tiktok"></i><span>TIKTOK</span></a>
-                    <a href="https://www.instagram.com/the_kazoth" class="node"><i class="fab fa-instagram"></i><span>INSTAGRAM</span></a>
-                </nav>
-            </div>
-        </section>
+@keyframes glitch { 
+    0% { transform: translate(0); clip-path: inset(10% 0 10% 0); }
+    5% { transform: translate(-5px, 2px); }
+    10% { transform: translate(5px, -2px); clip-path: inset(40% 0 20% 0); }
+    100% { transform: translate(0); }
+}
 
-        <footer class="system-footer">
-            <a href="mailto:the.kAzOth@gmail.com" class="terminal-btn">
-                <div class="glitch-text" data-text="INITIATE_CONTACT">INITIATE_CONTACT</div>
-                <div class="email-sub">THE.KAZOTH@GMAIL.COM</div>
-            </a>
-            <div class="meta-data">KAZOTH // CORE_VERSION_2026 // ALL_RIGHTS_RESERVED</div>
-        </footer>
-    </main>
+/* GENRE LED INDICATORS */
+.genre-indicator { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 3rem; }
+.led-tag { 
+    font-family: var(--font-logo); font-size: 0.75rem; letter-spacing: 4px; color: #333;
+    padding: 8px 16px; border: 1px solid #1a1a1a; transition: 0.3s;
+    animation: ledPulse 3s infinite alternate;
+}
+.led-tag:nth-child(2n) { animation-delay: 1s; }
+.led-tag:nth-child(3n) { animation-delay: 2s; }
 
-</body>
-</html>
+@keyframes ledPulse {
+    0%, 90% { color: #333; border-color: #1a1a1a; text-shadow: none; box-shadow: none; }
+    95%, 100% { color: var(--core-cyan); border-color: var(--core-cyan); text-shadow: 0 0 10px var(--core-cyan); box-shadow: inset 0 0 10px rgba(0,242,255,0.2); }
+}
+
+/* GRID SYSTEM */
+.core-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; }
+.module { background: var(--panel); border: 1px solid var(--border); position: relative; }
+.module-header { background: #111; padding: 8px 15px; display: flex; justify-content: space-between; font-family: var(--font-data); font-size: 0.65rem; border-bottom: 1px solid var(--border); }
+.module-header .id { color: var(--core-cyan); }
+
+.audio-core { grid-column: span 12; }
+.video-core { grid-column: span 12; }
+.neural-core { grid-column: span 12; }
+
+/* VIDEO DECK FIX */
+.video-deck { padding: 20px; background: #000; }
+.video-aspect-ratio { position: relative; width: 100%; max-width: 900px; margin: 0 auto; aspect-ratio: 16 / 9; }
+.video-aspect-ratio iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* MATRIX GRID (9 NODES) */
+.matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.node { 
+    padding: 40px 20px; text-decoration: none; color: #666; border: 0.5px solid var(--border);
+    display: flex; flex-direction: column; align-items: center; gap: 15px; transition: 0.4s;
+}
+.node i { font-size: 2rem; }
+.node span { font-family: var(--font-logo); font-size: 0.8rem; letter-spacing: 2px; }
+.node:hover { background: rgba(0, 242, 255, 0.05); color: #fff; border-color: var(--core-cyan); box-shadow: inset 0 0 20px rgba(0,242,255,0.05); }
+
+/* FOOTER TERMINAL */
+.system-footer { padding: 10rem 0 4rem; text-align: center; }
+.terminal-btn { display: inline-block; padding: 2rem 5rem; border: 1px solid var(--core-red); text-decoration: none; position: relative; overflow: hidden; }
+.glitch-text { font-family: var(--font-logo); font-size: 1.8rem; color: var(--core-red); position: relative; }
+.email-sub { font-family: var(--font-data); color: #555; font-size: 0.8rem; margin-top: 10px; }
+
+.terminal-btn:hover { background: var(--core-red); }
+.terminal-btn:hover .glitch-text, .terminal-btn:hover .email-sub { color: #000; }
+
+.meta-data { margin-top: 5rem; font-family: var(--font-data); font-size: 0.6rem; color: #222; letter-spacing: 5px; }
+
+/* RESPONSIVE & CONSOLES */
+@media (min-width: 1024px) {
+    .audio-core { grid-column: span 7; }
+    .video-core { grid-column: span 5; }
+}
+
+@media (max-width: 768px) {
+    .viewport-frame { padding: 10px; }
+    .hero-header { padding: 4rem 0; }
+    .matrix-grid { grid-template-columns: 1fr; }
+    .node { padding: 25px; flex-direction: row; justify-content: center; }
+    .terminal-btn { width: 100%; padding: 2rem 1rem; }
+    .glitch-text { font-size: 1.2rem; }
+}
+
+/* SPECIAL CONSOLE TV RATIO */
+@media (min-aspect-ratio: 16/9) and (min-width: 1600px) {
+    .viewport-frame { transform: scale(1.1); margin-top: 5vh; }
+}
